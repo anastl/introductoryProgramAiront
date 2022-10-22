@@ -87,3 +87,7 @@ Both internal and external Javascript can go inside the ``<head>`` or the ``<bod
     * both -0
     * both NaN
     * or both non-zero, not NaN, and have the same value
+
+# Bibliography
+* [ Developer Mozilla](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript)  
+* [ Developer Mozilla - is it still part of your lifetime ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is)  
