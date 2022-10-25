@@ -4,6 +4,7 @@
 ## What is semantic HTML?
 Elements that clearly answer the question "what purpose or role does that HTML element have?" to both the developer and the browser.  
 HTML should be coded to represent the data that will be populated and not based on its default presentation styling.  
+
 ## Benefits of writing semantic markup  
 * Search engines will consider its contents as important keywords to influence the page's search rankings.  
 * Screen readers can use it as a signpost to help visually impaired users navigate a page (aids in accessibility)
@@ -29,9 +30,9 @@ These are some of the roughly 100 semantic elements available:
 * `<time>  `
 
 ## Accessibility (A11y)  
-
 Accessibility is the practice of making your websites usable by as many people as possible, by developing content to be accessible, no matter an individual's physical and cognitive abilities and how they access the web.  
 Websites have to comply with the Web Content Accessibility Guidelines.  
+
 ### Benefits
 * Semantic HTML, which improves accessibility, also improves SEO, making your site more findable.
 * Caring about accessibility demonstrates good ethics and morals, which improves your public image.
