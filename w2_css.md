@@ -30,7 +30,7 @@ They are what create a CSS stylesheet and are comprised by:
 
 ## The Box Model
 When laying out a document, the browser's rendering engine represents each element as a rectangular box according to the standard CSS basic box model. CSS determines the size, position, and properties (color, background, border size, etc.) of these boxes. The box model describes how these elements work together to create a box as displayed by CSS.  
-Every box is composed of four parts (or areas), defined by their respective edges: the content edge, padding edge, border edge, and margin edge.
+Every box is composed of four parts (or areas), defined by their respective edges: the **content** edge, **padding** edge, **border** edge, and **margin** edge.
 
 ### Block boxes
 * The box will break onto a new line.
