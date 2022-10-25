@@ -14,6 +14,6 @@
 Allows a developer to squash an extensive amount of commits into a single commit before merging it with the master branch. Helps maintain a cleaner commit history.  
 
 ## Biliography  
-[Squash, merge or rebase?](https://matt-rickard.com/squash-merge-or-rebase)  
-[When to use squash, merge, and rebase?](https://medium.com/@shubhpaliwal98/when-to-use-squash-merge-and-rebase-43da3571dcbe)  
-[Atlassian - Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
+* [Squash, merge or rebase?](https://matt-rickard.com/squash-merge-or-rebase)  
+* [When to use squash, merge, and rebase?](https://medium.com/@shubhpaliwal98/when-to-use-squash-merge-and-rebase-43da3571dcbe)  
+* [Atlassian - Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
