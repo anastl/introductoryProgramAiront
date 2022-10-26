@@ -1,4 +1,4 @@
-# [Input types](https://github.com/anastl/introductoryProgramAltimerik/blob/master/introToHTML.md#input-types)
+# [Input types](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md#input-types)
 
 # Semantic HTML
 ## What is semantic HTML?

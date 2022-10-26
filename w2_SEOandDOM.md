@@ -16,5 +16,5 @@ The Document Object Model (DOM) connects web pages to scripts or programming lan
 
 # Bibliography
 * [MDN - SEO](https://developer.mozilla.org/en-US/docs/Glossary/SEO)
-* [MDN - Intoduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+* [MDN - Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 * [MDN - Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
