@@ -1,12 +1,12 @@
 # Handbook  
 
 # Table of Contents
-1. [GIT](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md#GIT)
-2. [HTML](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md#HTML)
-3. [CSS](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md#CSS)
-4. [JavaScript](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md#JavaScript)
-5. [SEO](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md#SEO)
-6. [Bibliography](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md#Bibliography)  
+1. [GIT](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#git)
+2. [HTML](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#html)
+3. [CSS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#css)
+4. [JavaScript](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#javascript)
+5. [SEO](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#seo)
+6. [Bibliography](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#bibliography)  
 
 # GIT  
 
@@ -15,14 +15,20 @@
     Table of contents
     </summary>
 
-1. [What's GIT?](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-2. [What's version control?](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-3. [Most common commands](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-4. [GIT branching strategies](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-5. [GIT tags](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-6. [GIT commits](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-7. [Stash command](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-8. [Hooks](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
+1. [What's GIT?](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#whats-git)
+2. [What's version control?](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#whats-version-control)
+3. [Most common commands](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#most-common-commands)
+4. [GIT branch](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#git-branch)
+5. [GIT tags](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#git-tags)
+6. [GIT commits](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#git-commits)
+7. [Stash command](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#stash-command)
+8. [Hooks](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#hooks)
+9. [GIT branching strategies](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#git-branching-strategies)
+10. [GIT workflow](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#git-workflow)
+11. [GIT merge](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#git-workflow)
+12. [GIT rebase](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#git-rebase)
+13. [GIT squash + merge](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#git-squash--merge)
+
 </details>
 
 ## What's GIT?
@@ -157,21 +163,20 @@ Allows a developer to squash an extensive amount of commits into a single commit
     Table of contents
     </summary>
 
-1. [What's HTML?](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-2. [XHTML](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-3. [Meta tags](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-4. [Input types](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-5. [`data-*` attributes](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-6. [Semantic HTML](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-7. [Accessibility (A11y)  ](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-8. [Hooks](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
+1. [What's HTML?](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#whats-html)
+2. [XHTML](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#xhtml)
+3. [Meta tags](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#meta-tags)
+4. [Input types](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#input-types)
+5. [`data-*` attributes](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#data--attributes)
+6. [Semantic HTML](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#semantic-html)
+7. [Accessibility (A11y)](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#accessibility-a11y)
 </details>
 
 ## What's HTML?
 HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. HTML is used to specify whether your web content should be recognized as a paragraph, list, heading, link, image, multimedia player, form, or one of many other available elements or even a new element that you define.  
 ## XHTML 
 XHTML stands for EXtensible HyperText Markup Language. It is a cross between HTML and XML language. XHTML is almost identical to HTML but it is stricter than HTML. XHTML is HTML defined as an XML application. It is supported by all major browsers.  
-## HTML VS XHTML  
+### HTML VS XHTML  
 Key differences between HTML and XHTML:
 * `<!DOCTYPE>` is mandatory in XHTML
 * HTML is newer than XHTML
@@ -210,7 +215,6 @@ Meta tags are specific snippets of text and image content that provide a summary
 * time 
 * url  
 ## `data-*` attributes  
-# Data-Attributes  
 Allow the storage of extra, custom information on standard, semantic HTML elements without other hacks such as non-standard attributes, or extra properties on DOM. The stored (custom) data can then be used in the page's JavaScript to create a more engaging user experience (without any Ajax calls or server-side database queries).  
 
 Any attribute on any element whose attribute name starts with data- is a data attribute, and will be completely ignored by the user agent. For example: 
@@ -286,14 +290,13 @@ Websites have to comply with the Web Content Accessibility Guidelines.
     Table of contents
     </summary>
 
-1. [What is CSS?](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-2. [Importing external stylesheets](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-3. [CSS rulesets](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-4. [CSS syntax](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-5. [The Box Model](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-6. [Specificity](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-7. [The `!important` keyword](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-8. [](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
+1. [What is CSS?](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#what-is-css)
+2. [Importing external stylesheets](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#importing-external-stylesheets)
+3. [CSS rulesets](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#css-rulesets)
+4. [CSS syntax](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#css-syntax)
+5. [The Box Model](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#the-box-model)
+6. [Specificity](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#specificity)
+7. [The `!important` keyword](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#the-important-keyword)
 </details>
 
 ## What is CSS?
@@ -366,14 +369,11 @@ CSS declarations marked as important override any other declarations within the 
     Table of contents
     </summary>
 
-1. [Basic syntax](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-2. [DOM](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-3. [Strict](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-4. [Scope](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-5. [Hoisting](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-6. [GIT commits](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-7. [Stash command](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
-8. [Hooks](https://github.com/anastl/introductoryProgramAiront/blob/master/introToHTML.md)
+1. [Basic syntax](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#basic-syntax)
+2. [DOM](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#dom)
+3. [Strict](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#strict)
+4. [Scope](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#scope)
+5. [Hoisting](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#hoisting)
 </details>
 
 ## Basic syntax
