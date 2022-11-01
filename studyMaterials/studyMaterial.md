@@ -297,6 +297,14 @@ Websites have to comply with the Web Content Accessibility Guidelines.
 5. [The Box Model](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#the-box-model)
 6. [Specificity](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#specificity)
 7. [The `!important` keyword](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#the-important-keyword)
+8. [Positioning](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#positioning)
+9. [Relative and absolute units](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#relative-and-absolute-units)
+10. [Layout](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#layout)
+11. [Flexbox](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#flexbox)
+12. [Grid](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#grid)
+13. [OOCSS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#oocss-object-oriented-css)
+14. [BEM](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#bem-block-element-modifier)
+14. [CSS preprocessors](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#css-preprocessors)
 </details>
 
 ## What is CSS?
@@ -360,7 +368,198 @@ The three columns are created by counting the number of selector components for 
 * Combinators, such as `+`, `>`, `~`, `" "` (space), and `||`, may make a selector more specific in what is selected but they don't add any value to the specificity weight.
 * The negation pseudo-class, `:not()`, itself has no weight. Neither do the `:is()` or the `:has()` pseudo-classes. The parameters in these selectors, however, do. The values of both come from the parameter in the list of parameters that has the highest specificity. 
 ## The `!important` keyword
-CSS declarations marked as important override any other declarations within the same cascade layer and origin. When conflicting declarations from the same origin and cascade layer with the `!important` flag are applied to the same element, the declaration with a greater specificity is applied. 
+CSS declarations marked as important override any other declarations within the same cascade layer and origin. When conflicting declarations from the same origin and cascade layer with the `!important` flag are applied to the same element, the declaration with a greater specificity is applied.  
+## Positioning
+Sets how an element is positioned in a document. 
+### Values
+* static: every element has a static position by default, so the element will stick to the normal page flow. So if there is a left, right, top, bottom, z-index set then there will be no effect on that element.
+* relative: an element’s original position remains in the flow of the document, just like the static value. But now left, right, top, bottom, z-index will work. The positional properties “nudge” the element from the original position in that direction.
+* absolute: the element is removed from the flow of the document and other elements will behave as if it’s not even there whilst all the other positional properties will work on it.
+* fixed: the element is removed from the flow of the document like absolutely positioned elements. In fact they behave almost the same, only fixed positioned elements are always relative to the document, not any particular parent, and are unaffected by scrolling.
+* sticky: the element is treated like a relative value until the scroll location of the viewport reaches a specified threshold, at which point the element takes a fixed position where it is told to stick.
+* inherit: the position value doesn’t cascade, so this can be used to specifically force it to, and inherit the positioning value from its parent.  
+## Relative and absolute units
+### Relative (responsive)
+Unlike PX, relative units like %, EM, and REM are better suited to responsive design and also help meet accessibility standards. Relative units scale better on different devices because they can scale up and down according to another element’s size.
+* EM: Relative to the parent element (1em = 16 px)
+* REM: Relative to the root element (HTML tag)
+* %: Relative to the parent element
+* VW: Relative to the viewport’s width
+* VH: Relative to the viewport’s height
+### Absolute
+Choose PX however, if you need to ensure that an element never resizes at any breakpoint and remains the same regardless of whether a user has chosen a different default size. PX units ensure consistent results even if that’s not ideal.
+* Px: Using PX can be problematic for responsive sites, but they are useful for maintaining consistent sizing for some elements. If you have elements that should not be resized, then using PX is a good choice.  
+## Layout
+### Fixed/ static (px)
+In a fixed (static) layout, elements are sized using pixels. The elements will be the same size on all screens, it’s a measurement that is independent and uneffected by the size of the device we are viewing from. If we create an element that is wider or taller than the device size we will see horizontal scrollbars, and the user will have to scroll to see the rest of the content that is out of view.  
+### Elastic (em)
+As a user scales the text up and down using their zoom settings it will also scale the elements set as ems. this way your text will always be in proportion to the container it is within. There are also some disadvantages such as, if a user scales elements that occupy the same space overlap is possible unless the developer invests a lot of time testing font sizes across many different device sizes and make s adjustments accordingly.  
+### Fluid/ liquid (%)
+Fluid layouts size elements using (%) percents. This allows for a layout that will stretch and expeand or contract to the size of the user's device. This allows developers to make use of the entirety of space on the screen. Also your users will never see horizontal scrollbars if it is implemented correctly.  
+### Hybrid
+Hybrid layouts use a combination of all of the size values mentioned above.  
+## Flexbox
+The Flexbox Layout module aims at providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic.  
+The main idea behind the flex layout is to give the container the ability to alter its items’ width/height (and order) to best fill the available space (mostly to accommodate to all kind of display devices and screen sizes). **A flex container expands items to fill available free space or shrinks them to prevent overflow.**  
+Flexbox layout is most appropriate to the components of an application, and small-scale layouts.  
+### Flexbox teminology
+* **main axis** – The main axis of a flex container is the primary axis along which flex items are laid out. Beware, it is not necessarily horizontal; it depends on the flex-direction property (see below).
+* **main-start | main-end** – The flex items are placed within the container starting from main-start and going to main-end.
+* **main size** – A flex item’s width or height, whichever is in the main dimension, is the item’s main size. The flex item’s main size property is either the ‘width’ or ‘height’ property, whichever is in the main dimension.
+* **cross axis** – The axis perpendicular to the main axis is called the cross axis. Its direction depends on the main axis direction.
+* **cross-start | cross-end** – Flex lines are filled with items and placed into the container starting on the cross-start side of the flex container and going toward the cross-end side.
+* **cross size** – The width or height of a flex item, whichever is in the cross dimension, is the item’s cross size. The cross size property is whichever of ‘width’ or ‘height’ that is in the cross dimension.
+### Flex container properties (parents)
+* Display
+* Flex-direction
+    * Row, row-reverse, column, column-reverse
+* Flex-wrap
+    * Nowrap, wrap, wrap-reverse
+* Flex-flow
+    * shorthand for the flex-direction and flex-wrap properties
+* Justify-content (when there is extra space in the main-axis)
+    * flex-start, flex-end, center, space-between, space-around, space-evenly, start, end, left, right
+        * The safest values are flex-start, flex-end, and center
+    * Safe, unsafe
+        * Using safe ensures that however you do this type of positioning, you can’t push an element such that it renders off-screen (e.g. off the top) in such a way the content can’t be scrolled too (called “data loss”).
+* Align-items
+    * stretch, flex-start, flex-end, center, baseline, first baseline, last baseline, start, end, self-start, self-end
+    * Safe, unsafe
+        * Using safe helps prevent aligning elements such that the content becomes inaccessible.
+* Align-content (when there is extra space in the cross-axis)
+    * flex-start, flex-end, center, space-between, space-around, space-evenly, stretch, start, end, baseline, first baseline, last baseline
+    * Safe, unsafe
+        * Using safe helps prevent aligning elements such that the content becomes inaccessible.
+* gap, row-gap, column-gap
+### Flex items properties (children)
+* Order
+* Flex-grow
+* Flex-shrink
+* Flex-basis
+* Flex
+* Align-self
+    * auto, flex-start, flex-end, center, baseline, stretch  
+## Grid
+The Grid layout is intended for larger scale layouts. Similarly to flexbox, the source order of the grid items doesn’t matter. Your CSS can place them in any order, which makes it super easy to rearrange your grid with media queries. Imagine defining the layout of your entire page, and then completely rearranging it to accommodate a different screen width all with only a couple lines of CSS.  
+### Grid terminology
+* Grid container - The element on which display: grid is applied. It’s the direct parent of all the grid items.
+* Grid item - The children (i.e. direct descendants) of the grid container. 
+* Grid line - The dividing lines that make up the structure of the grid. They can be either vertical (“column grid lines”) or horizontal (“row grid lines”) and reside on either side of a row or column. 
+* Grid track - The space between two adjacent grid lines. You can think of them as the columns or rows of the grid.
+* Grid area - The total space surrounded by four grid lines. A grid area may be composed of any number of grid cells.
+* Grid cell - The space between two adjacent row and two adjacent column grid lines. It’s a single “unit” of the grid.
+### Grid containers properties (parent)
+* Display
+    * Grid, inline-grid
+* Grid-template-columns, grid-template-rows
+    * Track-size, line-name
+* Grid-template-areas
+    * Grid-area-name, “.”, none
+* Grid-template (A shorthand for setting grid-template-rows, grid-template-columns, and grid-template-areas in a single declaration)
+    * None, grid-template-rows, grid-template-columns
+* Column-gap, row-gap, grid-column-gap, grid-row-gap
+    * Line-size
+* Gap, grid-gap (shorthand for row-gap and column-gap)
+    * Grid-row-gap, grid-column-gap
+* Justify-items
+    * Start, end, center, stretch
+* Align-items
+    * Start, end, center, stretch, baseline
+* Place-items
+    * Align-items, justify-items
+* Justify-content
+    * Start, end, center, stretch, space-around, space-between, space-evenly
+* Align-content
+    * Start, end, center, stretch, space-around, space-between, space-evenly
+* Place-content
+    * Align-content, justify-content
+* Grid-auto-columns, grid-auto-rows
+    * Track-size
+* Grid-auto-flow
+    * Row, column, dense
+* Grid (shorthand for grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and grid-auto-flow)
+    * None, grid-template, grid-template-rows, `[ auto-flow && dense? ] <grid-auto-columns>?`, `[ auto-flow && dense? ] <grid-auto-rows>? || <grid-template-columns>`  
+### Grid items properties (children)
+* Grid-column-start, grid-column-end, grid-row-start, grid-row-end
+    * Line, `span <number>`, `span <name>`, auto 
+* Grid-column, grid-row (Shorthand for grid-column-start + grid-column-end, and grid-row-start + grid-row-end, respectively)
+    * Start-line, end-line
+* Grid-area
+    * Name, row-start, column-start, row-end, column-end
+* Justify-self
+    * Start, end, center, stretch
+* Align-self
+    * Start, end, center, stretch
+* Place-self
+    * Auto,  align-self, justify-self
+### Special units
+* Fr units (portion of the remaining space)
+* Sizing Keywords
+* min-content: the minimum size of the content
+* max-content: the maximum size of the content
+* auto: this keyword is a lot like fr units, except that they “lose” the fight in sizing against fr 
+* fit-content: use the space available, but never less than min-content and never more than max-content
+* Fr
+### Special functions
+* minmax() sets a minimum and maximum value for what the length is able to be
+* min() function
+* max() function
+### repeat() function and keywords
+* Syntax: repeat( `<number of times>`, `<size>` )
+* Keywords
+    * auto-fill: Fit as many possible columns as possible on a row, even if they are empty.
+    * auto-fit: Fit whatever columns there are into the space. Prefer expanding columns to fill space rather than empty columns.
+```
+grid-template-columns: 
+  repeat(auto-fit, minmax(250px, 1fr));
+```
+## OCSS (Object Oriented CSS)
+It’s a CSS writing methodology that aims to make CSS modular and object-based. The “object” in OOCSS refers to an HTML element or anything associated with it (like CSS classes or JavaScript methods).  
+A CSS object may consist of four things:
+* HTML node(s) of the DOM
+* CSS declarations about the style of those nodes
+* Components like background images
+* JavaScript behaviors, listeners, or methods associated with an object
+### Principles of OOCSS
+1. Separate structure from appearance: A big part of OOCSS is writing code that separates page structure (width, height, margins, padding) from appearance (fonts, colors, animations). This allows custom skinning to be applied onto multiple page elements without affecting the structure.
+2. Separate content from its container: In simpler terms, this only means that you should avoid using child selectors whenever it’s possible. When customizing any unique page elements like anchor links, headers, blockquotes, or unordered lists, you should give them unique classes rather than descendant selectors.
+### Guidelines
+* Work with classes instead of IDs for styling.
+* Try to abstain from multi-level descendant class specificity unless needed.
+* Define unique styles with repeatable classes (eg floats, clearfix, unique font stacks).
+* Extend elements with targeted classes rather than parent classes.
+* Organize your stylesheet into sections, consider adding a table of contents.
+## BEM (Block, Element, Modifier)
+It’s a popular naming convention for classes in HTML and CSS. e.g.:  
+```
+<a class="btn btn--big btn--orange" href="https://css-tricks.com">
+  <span class="btn__price">$9.99</span>
+  <span class="btn__text">Subscribe</span>
+</a>
+```
+### Block
+It’s a top-level abstraction of a new component, it should be thought of as a parent.  
+In the example, it’s `btn`.
+### Element
+The child item or element can be placed inside a block and it’s denoted by two underscores following the name of the block.  
+In the example, it’s `btn__price` and `btn__text`.
+### Modifier
+They can manipulate the block so that we can theme or style that particular component without inflicting changes on a completely unrelated module.  
+In the example, it’s `btn--orange` and `btn--big`.
+## CSS preprocessors
+A CSS preprocessor is a program that lets you generate CSS from the preprocessor's own unique syntax.  
+There are many CSS preprocessors to choose from, however most CSS preprocessors will add some features that don't exist in pure CSS, such as mixin, nesting selector, inheritance selector, and so on. These features make the CSS structure more readable and easier to maintain.  
+To use a CSS preprocessor, you must install a CSS compiler on your web server; Or use the CSS preprocessor to compile on the development environment, and then upload compiled CSS file to the web server.
+### Advantages
+* Variables
+* Functions
+* Nesting
+* Mixins (similar to functions)
+* Extends (similar to extending classes in JS)
+* Loops
+### SASS
+Sass stands for Syntactically Awesome Stylesheet, it is an extension to CSS and a pre-processor, it’s compatible with all versions of CSS and it reduces repetition of CSS, therefore saving time.  
+A browser does not understand Sass code. Therefore, you will need a Sass pre-processor to convert Sass code into standard CSS, this process is called transpiling.  
 
 # JavaScript  
 
@@ -445,7 +644,13 @@ A web page is a document that can be either displayed in the browser window or a
 The DOM represents a document with a logical tree. Each branch of the tree ends in a node, and each node contains objects.  
 DOM methods allow programmatic access to the tree. With them, you can change the document's structure, style, or content. The DOM is not part of the JavaScript language nor is it a programming language, but is instead a Web API used to build websites. The core DOM defines the entities describing any document and the objects within it. This is expanded upon as needed by other APIs that add new features and capabilities to the DOM.  
 ### DOM vs HTML  
-
+The html comes back from the server and gets parsed so that the browser can build the DOM, which JavaScript can manipulate.
+###### DOM
+1. Result from parsing the response from the server
+2. Built by the browser, able to be manipulate with JS
+###### HTML
+1. Comes back from the server
+2. Cannot be manipulated with JS
 ## Strict
 JavaScript's strict mode is a way to opt in to a restricted variant of JavaScript, thereby implicitly opting-out of "sloppy mode". It is invoked by writing `"use strict";` at the top of a script and has siffernt semantics from normal JavaScript.
 ### Differences from normal JavaScript
@@ -495,18 +700,30 @@ You must ensure that your crawlers/bots get the closest experience to that of yo
 * [MDN - Semantics](https://developer.mozilla.org/en-US/docs/Glossary/Semantics)
 * [MDN - What is Accessibility?](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/What_is_accessibility)
 * [MDN Learn - HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML)  
+* [The Open Graph Protocol](https://ogp.me/)
 * [W3 Schools - Data attributes](https://www.w3schools.com/tags/att_data-.asp)
 * [W3 Schools - Meta tags](https://www.w3schools.com/tags/tag_meta.asp)  
 * [W3 Schools - Semantic HTML elements](https://www.w3schools.com/html/html5_semantic_elements.asp)
 * [W3 Schools - XHTML](https://www.w3schools.com/html/html_xhtml.asp)  
 ### CSS
+* [CSS tricks - BEM](https://css-tricks.com/bem-101/)
+* [CSS tricks - Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* [CSS tricks - Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+* [CSS tricks - position](https://css-tricks.com/almanac/properties/p/position/)
+* [Elementor - What’s The Difference Between PX, EM, REM, %, VW, and VH?](https://elementor.com/help/whats-the-difference-between-px-em-rem-vw-and-vh/)
+* [Emotionstudios - 6 reasons to use a CSS prerpocessor](https://www.emotionstudios.net/trending/6-reasons-you-should-use-a-css-preprocessor-2/)
+* [Learn.co - Layout](https://learn.co/lessons/css-layout-types)
 * [MDN - Cascading Stylesheets](https://developer.mozilla.org/en-US/docs/Web/CSS)
 * [MDN - CSS basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
 * [MDN - CSS box model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model)
+* [MDN - CSS preprocessors](https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor)
 * [MDN - CSS selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
 * [MDN - Introduction to the CSS box model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+* [MDN - Position](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 * [MDN - Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)
 * [MDN - The box model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
+* [Medium - What is the difference between HTML and DOM?](https://medium.com/@leetcore/what-is-the-difference-between-html-and-dom-c704ed3d1305)
+* [The basics of OOCSS](https://www.hongkiat.com/blog/basics-of-object-oriented-css/)
 ### JavaScript
 * [MDN - Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 * [MDN - Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
