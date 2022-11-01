@@ -302,7 +302,7 @@ Websites have to comply with the Web Content Accessibility Guidelines.
 10. [Layout](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#layout)
 11. [Flexbox](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#flexbox)
 12. [Grid](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#grid)
-13. [OOCSS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#oocss-object-oriented-css)
+13. [OOCSS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#ocss-object-oriented-css)
 14. [BEM](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#bem-block-element-modifier)
 14. [CSS preprocessors](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#css-preprocessors)
 </details>
