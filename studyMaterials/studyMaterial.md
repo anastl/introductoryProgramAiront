@@ -305,7 +305,8 @@ Websites have to comply with the Web Content Accessibility Guidelines.
 13. [Media Queries](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#media-queries)
 14. [OOCSS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#ocss-object-oriented-css)
 15. [BEM](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#bem-block-element-modifier)
-16. [CSS preprocessors](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#css-preprocessors)
+16. [SMACSS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#smacss-scalable-and-modular-architecture-for-css)
+17. [CSS preprocessors](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#css-preprocessors)
 </details>
 
 ## What is CSS?
@@ -621,6 +622,15 @@ In the example, it’s `btn__price` and `btn__text`.
 ### Modifier
 They can manipulate the block so that we can theme or style that particular component without inflicting changes on a completely unrelated module.  
 In the example, it’s `btn--orange` and `btn--big`.
+## SMACSS (Scalable and Modular Architecture for CSS)
+It’s a style guide, an attempt to document a consistent approach to site development when using CSS. It follows five categories:  
+1. Base: these are the default values. They are padding, margin, border, font and other properties; these values are used on the entire website and all elements.
+2. Layout: divides a page into sections with elements like header, footer, main page, etc. Layouts hold one or more modules together. Often developers show layout elements by prefixing the class with l-, e.g. l-header, l-footer.
+3. Module: modules are the reusable, modular parts of our design like navbar, sidebar and some elements that are repeated in the site.
+4. State: states are ways to describe how our modules or layouts will look when they are in a particular state (e.g. active, inactive, expanded, hidden). These are prefixed with is-, e.g. is-active, is-inactive, is-expanded, is-hidden.
+5. Theme: Theme rules are similar to state rules in that they describe how modules or layouts might look. It is more applicable for larger sites with shared elements that look different throughout.  
+The idea of this architecture is to not mix code of several categories on a single file because it can be complicated to find a single line of code to change.  
+The main purpose of this categorization is to codify patterns —things that repeat themselves within our design. Repetition results in less code, easier maintenance, and greater consistency in the user experience.  
 ## CSS preprocessors
 A CSS preprocessor is a program that lets you generate CSS from the preprocessor's own unique syntax.  
 There are many CSS preprocessors to choose from, however most CSS preprocessors will add some features that don't exist in pure CSS, such as mixin, nesting selector, inheritance selector, and so on. These features make the CSS structure more readable and easier to maintain.  
@@ -787,6 +797,7 @@ You must ensure that your crawlers/bots get the closest experience to that of yo
 * [CSS tricks - position](https://css-tricks.com/almanac/properties/p/position/)
 * [Elementor - What’s The Difference Between PX, EM, REM, %, VW, and VH?](https://elementor.com/help/whats-the-difference-between-px-em-rem-vw-and-vh/)
 * [Emotionstudios - 6 reasons to use a CSS prerpocessor](https://www.emotionstudios.net/trending/6-reasons-you-should-use-a-css-preprocessor-2/)
+* [Hongkiat - The basics of OOCSS](https://www.hongkiat.com/blog/basics-of-object-oriented-css/)
 * [Learn.co - Layout](https://learn.co/lessons/css-layout-types)
 * [MDN - Cascading Stylesheets](https://developer.mozilla.org/en-US/docs/Web/CSS)
 * [MDN - CSS basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
@@ -799,7 +810,7 @@ You must ensure that your crawlers/bots get the closest experience to that of yo
 * [MDN - The box model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
 * [MDN - Using media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 * [Medium - What is the difference between HTML and DOM?](https://medium.com/@leetcore/what-is-the-difference-between-html-and-dom-c704ed3d1305)
-* [The basics of OOCSS](https://www.hongkiat.com/blog/basics-of-object-oriented-css/)
+* [Swaps - SMACSS](https://swapps.com/blog/what-is-smacss-and-how-to-use-it/)
 ### JavaScript
 * [MDN - Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 * [MDN - Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
