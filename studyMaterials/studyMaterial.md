@@ -307,6 +307,8 @@ Websites have to comply with the Web Content Accessibility Guidelines.
 15. [BEM](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#bem-block-element-modifier)
 16. [SMACSS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#smacss-scalable-and-modular-architecture-for-css)
 17. [CSS preprocessors](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#css-preprocessors)
+18. [Bootstrap](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#bootstrap)
+19. [Materialize CSS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#materialize-css)
 </details>
 
 ## What is CSS?
@@ -629,6 +631,7 @@ It’s a style guide, an attempt to document a consistent approach to site devel
 3. Module: modules are the reusable, modular parts of our design like navbar, sidebar and some elements that are repeated in the site.
 4. State: states are ways to describe how our modules or layouts will look when they are in a particular state (e.g. active, inactive, expanded, hidden). These are prefixed with is-, e.g. is-active, is-inactive, is-expanded, is-hidden.
 5. Theme: Theme rules are similar to state rules in that they describe how modules or layouts might look. It is more applicable for larger sites with shared elements that look different throughout.  
+
 The idea of this architecture is to not mix code of several categories on a single file because it can be complicated to find a single line of code to change.  
 The main purpose of this categorization is to codify patterns —things that repeat themselves within our design. Repetition results in less code, easier maintenance, and greater consistency in the user experience.  
 ## CSS preprocessors
@@ -645,6 +648,23 @@ To use a CSS preprocessor, you must install a CSS compiler on your web server; O
 ### SASS
 Sass stands for Syntactically Awesome Stylesheet, it is an extension to CSS and a pre-processor, it’s compatible with all versions of CSS and it reduces repetition of CSS, therefore saving time.  
 A browser does not understand Sass code. Therefore, you will need a Sass pre-processor to convert Sass code into standard CSS, this process is called transpiling.  
+## Bootstrap
+Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains HTML, CSS and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components. Once added to a project, Bootstrap provides basic style definitions for all HTML elements.  
+The most prominent components of Bootstrap are its layout components, as they affect an entire web page. The basic layout component is called "Container", as every other element in the page is placed in it. Developers can choose between a fixed-width container and a fluid-width container.
+### Grid System
+The grid system in Bootstrap is one of the primary elements. They create layouts of pages by using multiple columns and rows in which the content can be inserted. If the device screen on which the page is being viewed, gets bigger, the grid will scale up to 12 columns. This fits the page on to the screen.  
+There are pre-defined classes by which designers can make their own layouts. The grid system can also collapse to fit smaller screens. This flexibility allows designers to create more visually and technically comprehensive websites, with comparatively less effort as compared to a non-framework development foundation.
+## Materialize CSS
+It’s a design language whose goal is to develop a system of design that allows for a unified user experience across all their products on any platform. Also known as Material Design.  
+It is used to construct attractive, consistent, and functional web pages and web apps while adhering to modern web design principles such as browser portability, device independence, and graceful degradation.  
+### Features
+* It is a standard CSS with minimal footprint.
+* In-built Responsive Design
+* It is free to use and requires jQuery JavaScript library to function properly.
+* It is cross-browser, compatible, and can be used to create reusable web components.
+* It contains enhanced and specialized features such as cards, tabs, navigation bars, toasts etc.
+* It provides new versions of common user interface controls such as buttons, checkboxes, and text fields adapted to follow Material Design concepts.
+* Materialize is by design very minimal and flat.  
 
 # JavaScript  
 
@@ -798,6 +818,7 @@ You must ensure that your crawlers/bots get the closest experience to that of yo
 * [Elementor - What’s The Difference Between PX, EM, REM, %, VW, and VH?](https://elementor.com/help/whats-the-difference-between-px-em-rem-vw-and-vh/)
 * [Emotionstudios - 6 reasons to use a CSS prerpocessor](https://www.emotionstudios.net/trending/6-reasons-you-should-use-a-css-preprocessor-2/)
 * [Hongkiat - The basics of OOCSS](https://www.hongkiat.com/blog/basics-of-object-oriented-css/)
+* [JavaTPoint - Materialize CSS](https://www.javatpoint.com/materialize-css-tutorial)
 * [Learn.co - Layout](https://learn.co/lessons/css-layout-types)
 * [MDN - Cascading Stylesheets](https://developer.mozilla.org/en-US/docs/Web/CSS)
 * [MDN - CSS basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
@@ -810,7 +831,9 @@ You must ensure that your crawlers/bots get the closest experience to that of yo
 * [MDN - The box model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
 * [MDN - Using media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 * [Medium - What is the difference between HTML and DOM?](https://medium.com/@leetcore/what-is-the-difference-between-html-and-dom-c704ed3d1305)
+* [Quickstart - Bootstrap](https://www.quickstart.com/blog/what-is-bootstrap-and-how-does-it-work/)
 * [Swaps - SMACSS](https://swapps.com/blog/what-is-smacss-and-how-to-use-it/)
+* [Wikipedia - Bootstrap](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
 ### JavaScript
 * [MDN - Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 * [MDN - Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
