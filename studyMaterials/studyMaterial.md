@@ -302,9 +302,10 @@ Websites have to comply with the Web Content Accessibility Guidelines.
 10. [Layout](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#layout)
 11. [Flexbox](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#flexbox)
 12. [Grid](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#grid)
-13. [OOCSS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#ocss-object-oriented-css)
-14. [BEM](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#bem-block-element-modifier)
-14. [CSS preprocessors](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#css-preprocessors)
+13. [Media Queries](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#media-queries)
+14. [OOCSS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#ocss-object-oriented-css)
+15. [BEM](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#bem-block-element-modifier)
+16. [CSS preprocessors](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#css-preprocessors)
 </details>
 
 ## What is CSS?
@@ -513,6 +514,80 @@ The Grid layout is intended for larger scale layouts. Similarly to flexbox, the 
 grid-template-columns: 
   repeat(auto-fit, minmax(250px, 1fr));
 ```
+## Media Queries
+They are useful when you want to modify your site or app depending on a device's general type (such as print vs. screen) or specific characteristics and parameters (such as screen resolution or browser viewport width).  
+Media queries are used for the following:
+* To conditionally apply styles with the CSS `@media` and `@import` at-rules.
+* To target specific media for the `<style>`, `<link>`, `<source>`, and other HTML elements with the media= attribute.
+* To test and monitor media states using the `Window.matchMedia()` and `MediaQueryList.addListener()` JavaScript methods.
+### Syntax
+`@ <media-type> <media-features> { <css rules> }`  
+#### Media types
+They define the category of device for which the media query applies: all, print, screen. The type is optional (assumed to be all) except when using the not or only logical operators. 
+##### Media features
+They describe a specific characteristic of the user agent, output device, or environment:
+* any-hover
+* any-pointer
+* aspect-ratio
+* color
+* color-gamut
+* color-index
+* display-mode
+* dynamic-range
+* forced-colors
+* grid
+* height
+* hover
+* inverted-colors
+* monochrome
+* orientation
+* overflow-block
+* overflow-inline	
+* pointer
+* prefers-color-scheme
+* prefers-contrast
+* prefers-reduced-motion
+* resolution
+* scripting
+* update
+* video-dynamic-range
+* width (min- and max-)
+##### Logical operators
+They can be used to compose a complex media query: `not`, `and`, and `only`. You can also combine multiple media queries into a single rule by separating them with commas.
+##### Examples
+``` 
+@media print {
+  /* ... */
+}
+@media screen, print {
+  /* ... */
+}
+@media (hover: hover) {
+  /* ... */
+}
+@media (max-width: 1250px) {
+  /* ... */
+}
+@media (width <= 1250px) {
+  /* ... */
+}
+
+@media (color) {
+  /* ... */
+}
+@media (min-width: 30em) and (orientation: landscape) {
+  /* ... */
+}
+@media (min-height: 680px), screen and (orientation: portrait) {
+  /* ... */
+}
+@media not all and (monochrome) {
+  /* ... */
+}
+@media not screen and (color), print and (color) {
+  /* ... */
+}
+```  
 ## OCSS (Object Oriented CSS)
 It’s a CSS writing methodology that aims to make CSS modular and object-based. The “object” in OOCSS refers to an HTML element or anything associated with it (like CSS classes or JavaScript methods).  
 A CSS object may consist of four things:
@@ -722,6 +797,7 @@ You must ensure that your crawlers/bots get the closest experience to that of yo
 * [MDN - Position](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 * [MDN - Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)
 * [MDN - The box model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
+* [MDN - Using media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 * [Medium - What is the difference between HTML and DOM?](https://medium.com/@leetcore/what-is-the-difference-between-html-and-dom-c704ed3d1305)
 * [The basics of OOCSS](https://www.hongkiat.com/blog/basics-of-object-oriented-css/)
 ### JavaScript
