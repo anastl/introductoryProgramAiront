@@ -1,6 +1,6 @@
 # Introductory Program Airont  
 ## About 📖  
-This is some of the research I've made in order to understand the most important concepts of the core technologies, frameworks, and methodologies that Front-End Development is based on.  
+This is some of the research I've made in order to understand the most important concepts of the core technologies, frameworks, and methodologies that Front-End Developers ought to know.  
 Here you'll find information about:
 1. [GIT](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#git)
 2. [HTML](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#html)

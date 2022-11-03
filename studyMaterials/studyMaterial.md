@@ -5,8 +5,9 @@
 2. [HTML](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#html)
 3. [CSS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#css)
 4. [JavaScript](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#javascript)
-5. [SEO](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#seo)
-6. [Bibliography](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#bibliography)  
+5. [HTTP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http)
+6. [SEO](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#seo)
+7. [Bibliography](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#bibliography)  
 
 # GIT  
 
@@ -155,6 +156,7 @@ Giflow is an alternative Git branching model that involves the use of feature br
 ## GIT squash + merge  
 Allows a developer to squash an extensive amount of commits into a single commit before merging it with the master branch. Helps maintain a cleaner commit history.  
 
+***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
 
 # HTML  
 
@@ -282,7 +284,10 @@ Websites have to comply with the Web Content Accessibility Guidelines.
     * Familiar elements, such as underlined links blue when not visited and purple when visited.
     * Dividing processes into logical, essential steps with progress indicators.
     * Website authentication as easy as possible without compromising security.
-    * Making forms easy to complete, such as with clear error messages and simple error recovery.
+    * Making forms easy to complete, such as with clear error messages and simple error recovery.  
+
+***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
+
 # CSS  
 
 <details>
@@ -666,6 +671,8 @@ It is used to construct attractive, consistent, and functional web pages and web
 * It provides new versions of common user interface controls such as buttons, checkboxes, and text fields adapted to follow Material Design concepts.
 * Materialize is by design very minimal and flat.  
 
+***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
+
 # JavaScript  
 
 <details>
@@ -783,6 +790,8 @@ XHR is the XMLHttpRequest Object which interacts with the server. Ajax technique
 ### XHR
 XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing. Despite its name, XMLHttpRequest can be used to retrieve any type of data, not just XML.  
 
+***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
+
 # SEO  
 SEO (Search Engine Optimization) is the process of making a website more visible in search results. Search engines crawl the web, following links from page to page, and index the content found.  
 Crawlers follow rules, if you follow those rules closely when doing SEO for a website, you give the site the best chances of showing up among the first results, increasing traffic and possibly revenue.  
@@ -791,6 +800,8 @@ SEO combines official search engine guidelines, empirical knowledge, and theoret
 * Copywriting: Write content using your visitors' vocabulary. Use text as well as images so that crawlers can understand the subject. 
 * Popularity: You get most traffic when other established sites link to your site.
 You must ensure that your crawlers/bots get the closest experience to that of your user’s, and that your site (and any fetches that need to be executed) loads within 5 seconds or less.  
+
+***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
 
 # Bibliography  
 ### GIT
