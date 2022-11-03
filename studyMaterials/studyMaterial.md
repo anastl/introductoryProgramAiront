@@ -692,9 +692,8 @@ It is used to construct attractive, consistent, and functional web pages and web
 ## Basic syntax
 It’s a scripting language that enables you to create dynamically updating content, control multimedia, etc. JavaScript is a lightweight and dynamic interpreted language, used to create client-side dynamic pages. It is an open-source and cross-platform language. It allows implicit type conversion.  
 ### Comments
-* // Single line comment
-* /* Multiple  
-lines comment */  
+* `// Single line comment`
+* `/* Multiple lines comment */` 
 ### How to add it to a page?  
 Both internal and external Javascript can go inside the ``<head>`` or the ``<body>`` tag. Although it's recommended to add it at the end of the `<body>` tag.  
 #### Internal JavaScript  
@@ -718,8 +717,8 @@ Both internal and external Javascript can go inside the ``<head>`` or the ``<bod
 * Classes
     * They start with a capital letter
 ### JavaScript Operators
-* Arithmetic: `\+` `\*` `\-` `/` `%`  
-* Assignment: `=` `+=` `-=` `/=` `*=` `%=`  
+* Arithmetic: `+` `*` `-` `/` `%`  
+* Assignment: `=` `+=` `*=` `-=` `/=` `%=`  
 ### JavaScript Data Types  
 * Primitives: 
     * String 
@@ -734,12 +733,12 @@ Both internal and external Javascript can go inside the ``<head>`` or the ``<bod
     * Sets and WeakSets
     * Maps and WeakMaps  
 ### Equality and comparisons  
-* Strict equals ( === )
+* Strict equals ( `===` )
     * Compares values ***and*** type 
     * Only on primitive types
-* Loose equals ( == )
+* Loose equals ( `==` )
     * Only on primitive types
-* Object.is() === true if ***both*** elements to compare are:
+* `Object.is() === true` if ***both*** elements to compare are one of the following:
     * `undefined`
     * `null`
     * `true`
@@ -789,6 +788,11 @@ Ajax stands for Asynchronous Javascript and XML. Ajax is a programming technique
 XHR is the XMLHttpRequest Object which interacts with the server. Ajax technique in the nutshell leverages the XHR request to send and receive data from the webserver. This object is provided by the browser’s javascript environment. It transfers the data between the web browser and server.  
 ### XHR
 XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing. Despite its name, XMLHttpRequest can be used to retrieve any type of data, not just XML.  
+
+***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
+
+# HTTP
+
 
 ***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
 
