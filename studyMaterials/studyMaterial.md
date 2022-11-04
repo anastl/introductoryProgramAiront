@@ -793,6 +793,77 @@ XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve
 
 # HTTP
 
+<details>
+    <summary>
+    Table of contents
+    </summary>
+
+1. [What is HTTP?](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#what-is-http)
+2. [Client: the user-agent](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#client-the-user-agent)
+3. [The server](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#strict)
+4. [Basic aspects of HTTP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#basic-aspects-of-http)
+5. [Connections and what can be controlled by HTTP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#connections-and-what-can-be-controlled-by-HTTP)
+6. [HTTP methods/ verbs](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-methods-verbs)
+7. [HTTP status codes](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-status-codes)
+8. [Session Management](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#session-management)
+</details>
+
+## What is HTTP?
+Hypertext Transfer Protocol (HTTP) is an application-layer protocol for fetching resources such as HTML documents. HTTP follows a client-server model, with a client (usually a web browser) opening a connection to make a request, then waiting until it receives a response. HTTP is a stateless protocol, meaning that the server does not keep any data (state) between two requests.
+Clients and servers communicate by exchanging individual messages. The messages sent by the client are sent to a server, and are called requests, the messages sent by the server to the client as an answer are called responses.  
+## Client: the user-agent
+The user-agent is any tool that initiates the request and acts on behalf of the user, typically the Web browser, but it may also be performed by programs used by engineers and Web developers to debug their applications.  
+To display a Web page, the browser sends an original request to fetch the HTML document that represents the page. It then parses this file, making additional requests corresponding to execution scripts, CSS, and sub-resources contained within the page (usually images and videos). The Web browser then combines these resources to present the completed Web page. Scripts executed by the browser can fetch more resources in later phases and the browser updates the Web page and/ or its contents accordingly.
+## The server
+On the opposite side of the communication channel is the server, which serves the document as requested by the client. A server appears as only a single machine virtually; but it may actually be a collection of servers sharing the load, totally or partially generating the document on demand.  
+## Basic aspects of HTTP
+* **HTTP is simple**: HTTP messages can be read and understood by humans, providing easier testing for developers, and reduced complexity for newcomers. 
+* **HTTP is extensible**: HTTP headers make this protocol easy to extend and experiment with. New functionality can even be introduced by a simple agreement between a client and a server about a new header's semantics.
+* **HTTP is stateless**, but not sessionless: HTTP is stateless, that is to say that there is no link between two requests being successively carried out on the same connection. This immediately has the prospect of being problematic for users attempting to interact with certain pages coherently, for example, using e-commerce shopping baskets. But while the core of HTTP itself is stateless, HTTP cookies allow the use of stateful sessions. Using header extensibility, HTTP Cookies are added to the workflow, allowing session creation on each HTTP request to share the same context, or the same state.  
+## Connections and what can be controlled by HTTP
+HTTP relies on the TCP standard, which is connection-based. Before a client and server can exchange an HTTP request/response pair, they must establish a TCP connection.  
+Common features controllable with HTTP:  
+* **Caching**: The server can instruct proxies and clients about what to cache and for how long. The client can instruct intermediate cache proxies to ignore the stored document.
+* **Relaxing** the origin constraint: To prevent snooping and other privacy invasions, Web browsers enforce strict separation between Web sites. Only pages from the same origin can access all the information of a Web page. Though such a constraint is a burden to the server, HTTP headers can relax this strict separation on the server side, allowing a document to become a patchwork of information sourced from different domains.
+* **Authentication**: Some pages may be protected so that only specific users can access them, basic authentication may be provided by HTTP
+* **Proxy and tunneling**: Servers or clients are often located on intranets and hide their true IP address from other computers. HTTP requests then go through proxies to cross this network barrier. 
+* **Sessions**: Using HTTP cookies allows you to link requests with the state of the server. This creates sessions, despite basic HTTP being a state-less protocol. This is useful not only for e-commerce shopping baskets, but also for any site allowing user configuration of the output.
+## HTTP methods/ verbs
+| HTTP method | CRUD | Safe* | Idempotent** | Information |
+--------------|------|-------|--------------|-------------|
+| POST | Create | No | No | It’s used to **create** new resources. In particular, it's used to create subordinate resources. That is, subordinate to some other (e.g. parent) resource. In other words, when creating a new resource, POST to the parent and the service takes care of associating the new resource with the parent, assigning an ID, etc. On successful creation, it returns a Location header with a link to the newly-created resource with the 201 HTTP status. |
+| GET | Read  | Yes | Yes | The HTTP GET method is used to **read** a representation of a resource. In the best case scenario, GET returns a representation in XML or JSON and an HTTP response code of 200. In an error case, it most often returns a 404 or 400. |
+| PUT | Update: replace | No | In most cases | PUT is most-often utilized for **update** capabilities, PUT-ing to a known resource URI with the request body containing the newly-updated representation of the original resource. On successful update, return 200 (or 204 if not returning any content in the body) from a PUT. |
+| PATCH | Update: modify | No | Could be, usually no | PATCH is used to **modify** resources. The PATCH request only needs to contain the changes to the resource, not the complete resource. The body contains a set of instructions describing how a resource currently residing on the server should be modified to produce a new version. Therefore the PATCH body shouldn't just be a modified part of the resource, but in some kind of patch language like JSON Patch or XML Patch. |
+| DELETE | Delete  | - | Yes | DELETE is used to **delete** a resource identified by a URI. On successful deletion, return HTTP status 200 along with a response body, perhaps the representation of the deleted item (often demands too much bandwidth), or a wrapped response. Either that or return HTTP status 204 with no response body.  |  
+
+\* can be called without the risk of data corruption or modification  
+** making multiple identical requests ends up having the same result as a single request
+## HTTP status codes
+* 1__ Informational (`100`, `101`)
+* 2__ Success (`200`, `201`, `202`, `203`, `204`, `205`, `206`)
+* 3__ Redirection (`301`, `302`, `304`, `307`)
+* 4__ Client error (`400`, `401`, `403`)
+* 5__ Server error (`500`, `501`, `502`, `503`)  
+***Note***: Client and Server Error codes have sub-codes ( e.g.: `4__.__` ) that provide a much more detailed explanation of what went wrong.
+## Session Management
+### What’s a session?
+A web session is a sequence of network HTTP request and response transactions associated with the same user. Enforcing correct session management often boils down to the protection and security of the session keys.  
+### What is session management used for?
+**Facilitating secure interactions between a user and some service** or application. When a user has an ongoing session with a web application, they are submitting requests within their session and oftentimes are providing potentially sensitive information.  
+They provide the **ability to establish variables** – such as access rights and localization settings – **which will apply to each and every interaction a user has with the web application for the duration of the session**.  
+More importantly, **it is critical that the application has a means of protecting private data belonging to each unique user**, especially within authenticated sessions.  
+### Session tokens
+They serve to identify a user’s session within the HTTP traffic being exchanged between the application and all of its users. They are needed because **each request is processed independently, even if they are related to the same session**.  
+This makes these tokens are vital as they’re passed back and forth between the user and the web application. **Each request and response made will have an associated session token which allows the application to remember distinct information about the client using it**.  
+* **Note**: It should be noted that session cookies are not the only means of carrying out a session. It is also possible to include headers that contain session tokens.  
+### Vulnerabilities introduced by a lack of session management
+* **Session hijacking**: Adversaries can take measures to brute force, predict, and expose session tokens which ultimately can lead to session hijacking, where the malicious party can then impersonate the victim and perform actions from their account. 
+* **Session fixation**: can also take place if the properties of a session token allows an attacker to fixate the token of the user once authenticated. It can then also be used to hijack the session. It may arise if the application fails to check for consistent user information throughout the session, reuses session tokens across all forms of access to the service, and sets cookies without proper validity periods.  
+### Best practices
+* **Set Secure/ HttpOnly Flags on your Cookies**: Refrain from sending sensitive traffic and tokens over an unencrypted channel (HTTP).
+* **Generate New Session Cookies**: New session tokens should be generated at every stage of a session: as soon as a user visits the application, when they provide correct credentials, and when a user logs out of their account. A cookie should also expire if the account is inactive for a long period of time.
+* **Configure Session Cookies Properly**: Session tokens should be long, unpredictable, and unique. The expiration on persistent cookies should be set for no longer than 30 minutes.  It’s recommended for the scope of domains that are able to access the session cookie to be limited and restrictive.
 
 ***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
 
