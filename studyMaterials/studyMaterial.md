@@ -194,7 +194,19 @@ Key differences between HTML and XHTML:
 Meta tags are specific snippets of text and image content that provide a summary for a webpage. Often meta tag data shows up whenever someone shares a link on social media, in messaging, or in chat softwares. In addition meta tags can contain information to help search engines and other technical services scan your site to figure out what it’s all about and whether or not it’s authentic.  
 `<meta>` tags always go inside the `<head>` element, and are typically used to specify character set, page description, keywords, author of the document, and viewport settings.
 ### OG tags
-
+Open Graph protocol enables any web page to become a rich object in a social graph. It requires some basic metadata to transform a webpage into a rich object:
+* og:title - The title of your object as it should appear within the graph, e.g., "The Rock".
+* og:type - The type of your object, e.g., "video.movie". Depending on the type you specify, other properties may also be required.
+* og:image - An image URL which should represent your object within the graph.
+* og:url - The canonical URL of your object that will be used as its permanent ID in the graph, e.g., "https://www.imdb.com/title/tt0117500/".  
+Other optional meta data:
+* og:audio - A URL to an audio file to accompany this object.
+* og:description - A one to two sentence description of your object.
+* og:determiner - The word that appears before this object's title in a sentence. An enum of (a, an, the, "", auto). If auto is chosen, the consumer of your data should chose between "a" or "an". Default is "" (blank).
+* og:locale - The locale these tags are marked up in. Of the format language_TERRITORY. Default is en_US.
+* og:locale:alternate - An array of other locales this page is available in.
+* og:site_name - If your object is part of a larger web site, the name which should be displayed for the overall site. e.g., "IMDb".
+* og:video - A URL to a video file that complements this object.  
 ## Input types
 * button 
 * checkbox 
@@ -942,5 +954,9 @@ You must ensure that your crawlers/bots get the closest experience to that of yo
 * [MDN - Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 * [MDN - XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 * [MDN Learn - What is JavaScript?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript)  
+### HTTP
+* [MDN - An overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+* [Microsoft Learn - Status codes](https://learn.microsoft.com/en-us/troubleshoot/developer/webapps/iis/www-administration-management/http-status-code#the-http-status-codes)
+* [RestAPITutorial - HTTP](https://www.restapitutorial.com/lessons/httpmethods.html)
 ### SEO
 * [MDN - SEO](https://developer.mozilla.org/en-US/docs/Glossary/SEO)
