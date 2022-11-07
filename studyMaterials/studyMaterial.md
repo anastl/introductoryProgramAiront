@@ -887,7 +887,18 @@ A cross-origin request is essentially a HTTP request. Certain methods generally 
 ### Advantages and Disadvantages of CORS
 CORS serves to circumvent an inherently secure default setting – namely the same-origin policy (SOP). The SOP, in turn, is an effective way to prevent potentially dangerous connections. However, the internet is often based on these cross-origin requests, since many connections from one host to others are certainly desired in many cases.  
 ## JSONP
-It’s a method that helps structured data be sent between different domains in JSON format. The acronym stands for *JSON* (JavaScript Object Notation) with *Padding*. To bypass the same-origin policy when requesting files from other domains, JSONP does not use the “XMLHttpRequest” object, as the usual JSON code does, but rather the element “script” including a function call. Unlike other files, scripts can also be transferred across domains without the SOP being violated.
+It’s a method that helps structured data be sent between different domains in JSON format. The acronym stands for *JSON* (JavaScript Object Notation) with *Padding*. To bypass the same-origin policy when requesting files from other domains, JSONP does not use the “XMLHttpRequest” object, as the usual JSON code does, but rather the element “script” including a function call. Unlike other files, scripts can also be transferred across domains without the SOP being violated.  
+JSONP solves the same-origin policy problem using `<script>` elements. As many domains as you like can be specified in the `“src”` attribute of this element, and the SOP directive does not apply here. *Therefore, the attribute can also be used to distinguish URLs that belong to a foreign domain and return JSON code and other files*. In such a case, the script itself is exclusively used as a service provider, which sends the JSONP query to the respective web server without having its own effect. Like this:  
+```
+<script type="text/javascript">
+    <codesnippet>
+    src="http://not-origin-url.com/getjson?jsonp=exampleCallback">
+</script>
+```
+If this JSONP script is embedded in the HTML code of a website and then run by any client, JSON data is accessed by the foreign domain `“not-origin-url.com”`. The query string `“?jsonp=exampleCallback”` tells the contacted server that it is a JSONP query. In addition, the information is supplied that it should send the requested data as a parameter of the JavaScript function `“exampleCallback”`.  
+In order for the client to be able to subsequently process the data, the server packs this again as a parameter in a JavaScript function, which is already predefined in the web browser and is communicated to the server in the query string (or query part) of the URL. The server then generates the appropriate JavaScript code including the queried information as a parameter – in the case of this example, a name-value pair – and returns it to the client. The function call is then executed by the browser as if it were listed directly in the HTML code of the source page. The browser is thereby able to process the data retrieved from the third-party URL.
+`exampleCallback( {"name":"test", "value":1} );`
+
 
 
 ***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
