@@ -818,6 +818,8 @@ XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve
 6. [HTTP methods/ verbs](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-methods-verbs)
 7. [HTTP status codes](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-status-codes)
 8. [Session Management](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#session-management)
+9. [CORS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#cors)
+10. [JSONP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#jsonp)
 </details>
 
 ## What is HTTP?
@@ -875,7 +877,18 @@ This makes these tokens are vital as they’re passed back and forth between the
 ### Best practices
 * **Set Secure/ HttpOnly Flags on your Cookies**: Refrain from sending sensitive traffic and tokens over an unencrypted channel (HTTP).
 * **Generate New Session Cookies**: New session tokens should be generated at every stage of a session: as soon as a user visits the application, when they provide correct credentials, and when a user logs out of their account. A cookie should also expire if the account is inactive for a long period of time.
-* **Configure Session Cookies Properly**: Session tokens should be long, unpredictable, and unique. The expiration on persistent cookies should be set for no longer than 30 minutes.  It’s recommended for the scope of domains that are able to access the session cookie to be limited and restrictive.
+* **Configure Session Cookies Properly**: Session tokens should be long, unpredictable, and unique. The expiration on persistent cookies should be set for no longer than 30 minutes.  It’s recommended for the scope of domains that are able to access the session cookie to be limited and restrictive.  
+## CORS
+All data for a webiste should originate from the same server for security reasons. But if data like CSS or JavaScript is attempted to be downloaded from a different server, this access attempt is referred to as a *cross-origin request*. However, if the data exchange is known to both website operators and intended, then the procedure can be permitted. The requested server – i.e. the server from which content is to be downloaded – then allows access via *cross-origin resource sharing*.
+However, CORS is not an open invitation for any cross-origin requests. Instead, *the second server permits exclusive access to the first via the HTTP header*, it exactly *describes which server may download the data* and make it finally available to the user.  
+### Structure of a CORS header  
+In line with the same-origin policy, the details of the origin of a server connection consist of three elements: *host, port, and protocol*. 
+A cross-origin request is essentially a HTTP request. Certain methods generally don’t present any problems. GET and HEAD cannot change data and are therefore generally not perceived as a security risk. The situation is different with *PATCH*, *PUT* or *DELETE*: These make *harmful interference possible*. For this reason, cross-origin resource sharing must also be activated here. Accordingly, CORS isn’t only able to include information on the permitted origin, but also on which HTTP requests are allowed by the source.
+### Advantages and Disadvantages of CORS
+CORS serves to circumvent an inherently secure default setting – namely the same-origin policy (SOP). The SOP, in turn, is an effective way to prevent potentially dangerous connections. However, the internet is often based on these cross-origin requests, since many connections from one host to others are certainly desired in many cases.  
+## JSONP
+It’s a method that helps structured data be sent between different domains in JSON format. The acronym stands for *JSON* (JavaScript Object Notation) with *Padding*. To bypass the same-origin policy when requesting files from other domains, JSONP does not use the “XMLHttpRequest” object, as the usual JSON code does, but rather the element “script” including a function call. Unlike other files, scripts can also be transferred across domains without the SOP being violated.
+
 
 ***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
 
@@ -955,6 +968,8 @@ You must ensure that your crawlers/bots get the closest experience to that of yo
 * [MDN - XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 * [MDN Learn - What is JavaScript?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript)  
 ### HTTP
+* [IONOS - CORS](https://www.ionos.com/digitalguide/websites/web-development/cross-origin-resource-sharing/)
+* [IONOS - JSONP](https://www.ionos.com/digitalguide/websites/web-development/jsonp/)
 * [MDN - An overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
 * [Microsoft Learn - Status codes](https://learn.microsoft.com/en-us/troubleshoot/developer/webapps/iis/www-administration-management/http-status-code#the-http-status-codes)
 * [RestAPITutorial - HTTP](https://www.restapitutorial.com/lessons/httpmethods.html)
