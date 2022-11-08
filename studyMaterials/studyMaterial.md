@@ -811,11 +811,12 @@ XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve
     </summary>
 
 1. [What is HTTP?](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#what-is-http)
-2. [Client: the user-agent](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#client-the-user-agent)
-3. [The server](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#strict)
-4. [Basic aspects of HTTP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#basic-aspects-of-http)
-5. [Connections and what can be controlled by HTTP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#connections-and-what-can-be-controlled-by-HTTP)
-6. [HTTP methods/ verbs](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-methods-verbs)
+2. [Basic aspects of HTTP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#basic-aspects-of-http)
+3. [HTTP 2.0](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-2-0)
+4. [HTTP 3.0](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-3-0)
+5. [HTTPS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#https)
+6. [Connections and what can be controlled by HTTP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#connections-and-what-can-be-controlled-by-HTTP)
+7. [HTTP methods/ verbs](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-methods-verbs)
 7. [HTTP status codes](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-status-codes)
 8. [Session Management](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#session-management)
 9. [CORS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#cors)
@@ -825,15 +826,68 @@ XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve
 ## What is HTTP?
 Hypertext Transfer Protocol (HTTP) is an application-layer protocol for fetching resources such as HTML documents. HTTP follows a client-server model, with a client (usually a web browser) opening a connection to make a request, then waiting until it receives a response. HTTP is a stateless protocol, meaning that the server does not keep any data (state) between two requests.
 Clients and servers communicate by exchanging individual messages. The messages sent by the client are sent to a server, and are called requests, the messages sent by the server to the client as an answer are called responses.  
-## Client: the user-agent
+### Client: the user-agent
 The user-agent is any tool that initiates the request and acts on behalf of the user, typically the Web browser, but it may also be performed by programs used by engineers and Web developers to debug their applications.  
 To display a Web page, the browser sends an original request to fetch the HTML document that represents the page. It then parses this file, making additional requests corresponding to execution scripts, CSS, and sub-resources contained within the page (usually images and videos). The Web browser then combines these resources to present the completed Web page. Scripts executed by the browser can fetch more resources in later phases and the browser updates the Web page and/ or its contents accordingly.
-## The server
+### The server
 On the opposite side of the communication channel is the server, which serves the document as requested by the client. A server appears as only a single machine virtually; but it may actually be a collection of servers sharing the load, totally or partially generating the document on demand.  
 ## Basic aspects of HTTP
 * **HTTP is simple**: HTTP messages can be read and understood by humans, providing easier testing for developers, and reduced complexity for newcomers. 
 * **HTTP is extensible**: HTTP headers make this protocol easy to extend and experiment with. New functionality can even be introduced by a simple agreement between a client and a server about a new header's semantics.
-* **HTTP is stateless**, but not sessionless: HTTP is stateless, that is to say that there is no link between two requests being successively carried out on the same connection. This immediately has the prospect of being problematic for users attempting to interact with certain pages coherently, for example, using e-commerce shopping baskets. But while the core of HTTP itself is stateless, HTTP cookies allow the use of stateful sessions. Using header extensibility, HTTP Cookies are added to the workflow, allowing session creation on each HTTP request to share the same context, or the same state.  
+* **HTTP is stateless, but not sessionless**: HTTP is stateless, that is to say that there is no link between two requests being successively carried out on the same connection. This immediately has the prospect of being problematic for users attempting to interact with certain pages coherently, for example, using e-commerce shopping baskets. But while the core of HTTP itself is stateless, HTTP cookies allow the use of stateful sessions. Using header extensibility, HTTP Cookies are added to the workflow, allowing session creation on each HTTP request to share the same context, or the same state.  
+## HTTP 2.0
+HTTP 2.0 does not modify the application semantics of HTTP in any way. All the core concepts, such as HTTP methods, status codes, URIs, and header fields, remain in place. Instead, HTTP 2.0 modifies how the data is formatted (framed) and transported between the client and server.  
+### Goals of HTTP 2.0
+* Enable request and response multiplexing (it allows the browser to fire off multiple requests at once on the same connection and receive the requests back in any order)
+* Header compression
+* Compatibility with the methods, status codes, URIs, and header fields defined by the HTTP 1.1 standard
+* Optimized prioritization of requests, making sure that loading for optimal user experience is as fast as possible
+* Support for server-side push (technique aimed at reducing latency by loading resources preemptively, even before the client knows they will be needed)
+* Server-side backwards compatibility, making sure servers can still serve clients only supporting HTTP 1.1 without any changes
+* Transforming to a binary protocol from the text-based HTTP 1.1
+### Features
+* Binary: Meaning commands use 1s and 0s and not text
+* Multiplex: Permits multiple requests and responses to be sent at the same time
+* Compression: Compresses headers that have been requested previously to make things more efficient
+* Stream prioritization: This allows for the exchange of successive streams at one time
+* Server push: The server can send additional information needed for a request before it is requested
+* Increased security: HTTP/2 is supported through encrypted connections
+### Differences between HTTP 1.0 vs HTTP 2.0
+| | HTTP 1.0 | HTTP 2.0 |
+|-|----------|----------|
+| Compression | No default compression | Built-in compression |
+| Performance | Doesn’t have the features to preemptively push resources to the client’s browser | Improving performance for the end-user by sending resources to the client before the browser asks for them |
+| Security | Possibility to suffer response splitting attacks due to not using binary formats | By using binary formats in the response headers, these attacks aren’t possible |
+| Delivery models | Delivers responses based on a single request | Uses multiplexing and server push to increase the delivery performance |
+| Multiplexing | Longer time required to load resources needed for a website | Allows connections made to a web server from to be used to send multiple requests and receive multiple responses |
+## HTTP 3.0
+HTTP 3.0 will be the first major upgrade to the hypertext transfer protocol since HTTP/2, it runs on QUIC, a new transport protocol that’s designed for mobile-heavy Internet usage. Therefore, HTTP 3.0 relies on the User Datagram Protocol (UDP), not the Transmission Control Protocol (TCP). Switching to UDP will enable faster connections and faster user experience when browsing online.  
+### Benefits of HTTP 3.0
+* Developing a workaround for the sluggish performance when a smartphone switches from WiFi to cellular data 
+* Decreasing the effects of packet loss — when one packet of information does not make it to its destination, it will no longer block all streams of information 
+* Faster connection establishment
+* Zero round-trip time (0-RTT): For servers they have already connected to, clients can skip the handshake requirement (the process of acknowledging and verifying each other to determine how they will communicate)
+* More comprehensive encryption: QUIC’s new approach to handshakes will provide encryption by default and will help mitigate the risk of attacks
+* QUIC understands that a site is made up of multiple files, and it won’t blight the entire connection just because one file hasn’t finished loading
+### UDP vs TCP  
+TCP is more reliable than UDP. UDP is faster for data sending than TCP. UDP makes error checking but no reporting but TCP makes checks for errors and reporting. TCP gives a guarantee that the order of data at receiving end is the same as on sending end while UDP has no such guarantee.  
+## HTTPS
+Hypertext transfer protocol secure (HTTPS) is the secure version of HTTP. HTTPS is encrypted in order to increase security of data transfer, it adds encryption, authentication, and integrity to the HTTP protocol. HTTPS is not a separate protocol from HTTP. It is simply using TLS/SSL encryption over the HTTP protocol, these certificates verify that a particular provider is who they say they are. The TSL/SSL protocol also encrypts data such as: 
+* Request URL (which web page was requested by the client)
+* Website content
+* Query parameters
+* Headers
+* Cookies  
+HTTPS secures communications by using what’s known as an asymmetric public key infrastructure. This type of security system uses two different keys to encrypt communications between two parties:  
+* The private key - this key is controlled by the owner of a website. This key lives on a web server and is used to decrypt information encrypted by the public key.
+* The public key - this key is available to everyone who wants to interact with the server in a way that’s secure. Information that’s encrypted by the public key can only be decrypted by the private key.
+This means that HTTPS prevents websites from having their information broadcast in a way that’s easily viewed by anyone snooping on the network, and that if the packets were to be intercepted, they would make no sense to the attacker. It also eliminates the ability of unmoderated third parties to inject advertising into web content.  
+### Benefits of HTTPS over HTTP
+* Integrity and Authentication
+* Privacy
+* User Experience
+* Compatibility: current browser changes are pushing HTTP ever closer to incompatibility
+* SEO  
 ## Connections and what can be controlled by HTTP
 HTTP relies on the TCP standard, which is connection-based. Before a client and server can exchange an HTTP request/response pair, they must establish a TCP connection.  
 Common features controllable with HTTP:  
@@ -979,10 +1033,16 @@ You must ensure that your crawlers/bots get the closest experience to that of yo
 * [MDN - XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 * [MDN Learn - What is JavaScript?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript)  
 ### HTTP
+* [Cloudflare - HTTPS](https://www.cloudflare.com/learning/ssl/what-is-https/)
+* [Cloudflare - HTTP 3.0](https://www.cloudflare.com/learning/performance/what-is-http3/)
 * [IONOS - CORS](https://www.ionos.com/digitalguide/websites/web-development/cross-origin-resource-sharing/)
 * [IONOS - JSONP](https://www.ionos.com/digitalguide/websites/web-development/jsonp/)
+* [IPWithEase - UDP vs TCP](https://ipwithease.com/tcp-vs-udp/)
 * [MDN - An overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
 * [Microsoft Learn - Status codes](https://learn.microsoft.com/en-us/troubleshoot/developer/webapps/iis/www-administration-management/http-status-code#the-http-status-codes)
 * [RestAPITutorial - HTTP](https://www.restapitutorial.com/lessons/httpmethods.html)
+* [SSL - HTTPS](https://www.ssl.com/faqs/what-is-https/)
+* [TheNewstack - HTTP 3.0](https://thenewstack.io/http-3-is-now-a-standard-why-use-it-and-how-to-get-started/)
+* [Upwork - HTTP 2.0](https://www.upwork.com/resources/what-is-http2)
 ### SEO
 * [MDN - SEO](https://developer.mozilla.org/en-US/docs/Glossary/SEO)
