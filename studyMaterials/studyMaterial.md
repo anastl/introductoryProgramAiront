@@ -812,8 +812,8 @@ XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve
 
 1. [What is HTTP?](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#what-is-http)
 2. [Basic aspects of HTTP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#basic-aspects-of-http)
-3. [HTTP 2.0](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-2-0)
-4. [HTTP 3.0](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-3-0)
+3. [HTTP 2.0](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-20)
+4. [HTTP 3.0](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-30)
 5. [HTTPS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#https)
 6. [Connections and what can be controlled by HTTP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#connections-and-what-can-be-controlled-by-HTTP)
 7. [HTTP methods/ verbs](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-methods-verbs)
