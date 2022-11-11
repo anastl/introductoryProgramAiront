@@ -156,7 +156,8 @@ Giflow is an alternative Git branching model that involves the use of feature br
 ## GIT squash + merge  
 Allows a developer to squash an extensive amount of commits into a single commit before merging it with the master branch. Helps maintain a cleaner commit history.  
 
-***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
+***[Go back to the main table of content](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***  
+***[Go back to GIT table of content](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#git)***
 
 # HTML  
 
@@ -298,7 +299,8 @@ Websites have to comply with the Web Content Accessibility Guidelines.
     * Website authentication as easy as possible without compromising security.
     * Making forms easy to complete, such as with clear error messages and simple error recovery.  
 
-***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
+***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***  
+***[Go back to HTML table of content](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#html)***
 
 # CSS  
 
@@ -683,7 +685,8 @@ It is used to construct attractive, consistent, and functional web pages and web
 * It provides new versions of common user interface controls such as buttons, checkboxes, and text fields adapted to follow Material Design concepts.
 * Materialize is by design very minimal and flat.  
 
-***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
+***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***  
+***[Go back to CSS table of content](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#css)***
 
 # JavaScript  
 
@@ -699,6 +702,7 @@ It is used to construct attractive, consistent, and functional web pages and web
 5. [Hoisting](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#hoisting)
 6. [Fetch API](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#fetch-api)
 7. [AJAX (XHR)](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#ajax-xhr)
+8. [Events](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#events)
 </details>
 
 ## Basic syntax
@@ -800,8 +804,39 @@ Ajax stands for Asynchronous Javascript and XML. Ajax is a programming technique
 XHR is the XMLHttpRequest Object which interacts with the server. Ajax technique in the nutshell leverages the XHR request to send and receive data from the webserver. This object is provided by the browser’s javascript environment. It transfers the data between the web browser and server.  
 ### XHR
 XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing. Despite its name, XMLHttpRequest can be used to retrieve any type of data, not just XML.  
+## Events
+Events are actions or occurrences that happen in the system you are programming, which the system tells you about so your code can react to them. For example, if the user clicks a button on a webpage or if a page finishes loading.  
+### Bubbling
+Event Bubbling happens when an element receives an event, and that event is transmitted or propagated to its parent and ancestor elements in the DOM tree until it gets to the root element. When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.  
+`Element clicked on -> Parent -> ... -> Top level element`  
+The most deeply nested element that caused the event is called a target element, accessible as event.target.  
+Note the differences between event.target and event.currentTarget:  
+* `event.target` – is the “target” element that initiated the event, it doesn’t change through the bubbling process.
+* `event.currentTarget` – is the “current” element, the one that has a currently running handler on it.  
+For instance, if we have a single handler `form.onclick`, then it can “catch” all clicks inside the form. No matter where the click happened, it bubbles up to `<form>` and runs the handler.  
+In `form.onclick handler`, `this (=event.currentTarget)` is the `<form>` element, because the handler runs on it. `event.target` is the actual element inside the form that was clicked.  
+#### Some non-bubbling events  
+* HTML frame/object
+    * load
+    * unload
+    * scroll (except that a scroll event on document must bubble to the window)
+* HTML form
+    * focus
+    * Blur
+* Mutation
+    * DOMNodeRemovedFromDocument
+    * DOMNodeInsertedIntoDocument
+* Progress
+    * loadstart
+    * progress
+    * error
+    * abort
+    * load
+    * loadend
 
-***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
+
+***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***  
+***[Go back to JavaScript table of content](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#javascript)***
 
 # HTTP
 
@@ -1035,7 +1070,8 @@ All:
 * Non-secure data storage
 
 
-***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
+***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***  
+***[Go back to HTTP table of content](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http)***
 
 # SEO  
 SEO (Search Engine Optimization) is the process of making a website more visible in search results. Search engines crawl the web, following links from page to page, and index the content found.  
@@ -1046,7 +1082,7 @@ SEO combines official search engine guidelines, empirical knowledge, and theoret
 * Popularity: You get most traffic when other established sites link to your site.
 You must ensure that your crawlers/bots get the closest experience to that of your user’s, and that your site (and any fetches that need to be executed) loads within 5 seconds or less.  
 
-***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
+***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***  
 
 # Bibliography  
 ### GIT
@@ -1103,9 +1139,11 @@ You must ensure that your crawlers/bots get the closest experience to that of yo
 * [Wikipedia - Bootstrap](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
 ### JavaScript
 * [LoginRadius - AJAX and XHR](https://blog.loginradius.com/engineering/ajax-and-xhr-using-plain-javascript/)
+* [JavaScript Info - Bubbling](https://javascript.info/bubbling-and-capturing)
 * [MDN - Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 * [MDN - Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 * [MDN - Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
+* [MDN - Introduction to Events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
 * [MDN - Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 * [MDN - Object.is()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is)  
 * [MDN - Scope](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
