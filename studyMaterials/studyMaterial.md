@@ -821,6 +821,11 @@ XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve
 8. [Session Management](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#session-management)
 9. [CORS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#cors)
 10. [JSONP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#jsonp)
+11. [JSON Web Token (JWT)](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#json-web-token-jwt)
+12. [Single sign-on (SSO)](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#single-sign-on-sso)
+13. [OAuth 2.0](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#oauth-20)
+14. [JWT vs OAuth](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#jwt-vs-oauth)
+15. [Cookies vs Local Storage vs Session Storage](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#cookies-vs-local-storage-vs-session-storage)
 </details>
 
 ## What is HTTP?
@@ -940,6 +945,42 @@ In line with the same-origin policy, the details of the origin of a server conne
 A cross-origin request is essentially a HTTP request. Certain methods generally don’t present any problems. GET and HEAD cannot change data and are therefore generally not perceived as a security risk. The situation is different with *PATCH*, *PUT* or *DELETE*: These make *harmful interference possible*. For this reason, cross-origin resource sharing must also be activated here. Accordingly, CORS isn’t only able to include information on the permitted origin, but also on which HTTP requests are allowed by the source.
 ### Advantages and Disadvantages of CORS
 CORS serves to circumvent an inherently secure default setting – namely the same-origin policy (SOP). The SOP, in turn, is an effective way to prevent potentially dangerous connections. However, the internet is often based on these cross-origin requests, since many connections from one host to others are certainly desired in many cases.  
+### CORS bypass
+```
+GET / HTTP/1.1 
+Host: https://foo.example.com
+(...)
+Origin: https://other.example.com
+```
+Server response:  
+```
+HTTP/1.1 200 OK
+(...)
+Access-Control-Allow-Origin: https://other.example.com
+Keep-Alive: timeout=2, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: application/xml
+[...JsonData]
+```
+With preflight requests for method POST  to check if the method is safe:  
+```
+OPTIONS / HTTP/1.1 
+Host: https://foo.example.com
+(...) 
+Origin: https://other.example.com
+Access-Control-Request-Method: POST 
+Access-Control-Request-Headers: X-CUSTOM, Content-Type
+```
+Response from the server, allowing POST, GET  
+```
+HTTP/1.1 204 No Content (...) 
+Access-Control-Allow-Origin: https://other.example.com
+Access-Control-Allow-Methods: POST, GET, OPTIONS 
+Access-Control-Allow-Headers: X-CUSTOM, Content-Type 
+Access-Control-Max-Age: 86400
+```  
+
 ## JSONP
 It’s a method that helps structured data be sent between different domains in JSON format. The acronym stands for *JSON* (JavaScript Object Notation) with *Padding*. To bypass the same-origin policy when requesting files from other domains, JSONP does not use the “XMLHttpRequest” object, as the usual JSON code does, but rather the element “script” including a function call. Unlike other files, scripts can also be transferred across domains without the SOP being violated.  
 JSONP solves the same-origin policy problem using `<script>` elements. As many domains as you like can be specified in the `“src”` attribute of this element, and the SOP directive does not apply here. *Therefore, the attribute can also be used to distinguish URLs that belong to a foreign domain and return JSON code and other files*. In such a case, the script itself is exclusively used as a service provider, which sends the JSONP query to the respective web server without having its own effect. Like this:  
@@ -952,7 +993,46 @@ JSONP solves the same-origin policy problem using `<script>` elements. As many d
 If this JSONP script is embedded in the HTML code of a website and then run by any client, JSON data is accessed by the foreign domain `“not-origin-url.com”`. The query string `“?jsonp=exampleCallback”` tells the contacted server that it is a JSONP query. In addition, the information is supplied that it should send the requested data as a parameter of the JavaScript function `“exampleCallback”`.  
 In order for the client to be able to subsequently process the data, the server packs this again as a parameter in a JavaScript function, which is already predefined in the web browser and is communicated to the server in the query string (or query part) of the URL. The server then generates the appropriate JavaScript code including the queried information as a parameter – in the case of this example, a name-value pair – and returns it to the client. The function call is then executed by the browser as if it were listed directly in the HTML code of the source page. The browser is thereby able to process the data retrieved from the third-party URL.
 `exampleCallback( {"name":"test", "value":1} );`
+## JSON Web Token
+JSON web token is an open standard that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. Because of its relatively small size, a JWT can be sent through a URL, through a POST parameter, or inside an HTTP header, and it is transmitted quickly. A JWT contains all the required information about an entity to avoid querying a database more than once. 
+### Benefits
+* More compact
+* More secure
+* More common: JSON parsers are common in most programming languages because they map directly to objects
+* Easier to process
+### Use
+* Authentication
+* Authorization: Once a user is successfully logged in, an application may request to access routes, services, or resources (e.g., APIs) on behalf of that user. To do so, in every request, it must pass an Access Token, which may be in the form of a JWT. Single Sign-on (SSO) widely uses JWT because of the small overhead of the format, and its ability to easily be used across different domains.
+* Information Exchange: JWTs are a good way of securely transmitting information between parties because they can be signed, which means you can be sure that the senders are who they say they are.
+## Single sign-on (SSO)  
+Single sign-on (SSO) is an authentication method that enables users to securely authenticate with multiple applications and websites by using just one set of credentials. This trust relationship is often based upon a certificate that is exchanged between the identity provider and the service provider. The token that is received by the Service Provider is validated according to the trust relationship that was set up between the Service Provider and the Identity Provider during the initial configuration.  
+## OAuth 2.0
+OAuth 2.0, which stands for “Open Authorization”, is a standard designed to allow a website or application to access resources hosted by other web apps on behalf of a user. It provides consented access and restricts actions of what the client app can perform on resources on behalf of the user, without ever sharing the user's credentials.   
+OAuth 2.0 is an authorization protocol and NOT an authentication protocol. As such, it is designed primarily as a means of granting access to a set of resources, for example, remote APIs or user’s data. OAuth 2.0 uses Access Tokens.  
+## JWT vs OAuth
+| JWT | OAuth |
+|-----|-------|
+| Mainly used for APIs | Web, browser, APIs, other apps |
+| Token format | Defining authorization protocols |
+| Client-side storage | Client and server-side storage |
+## Cookies vs Local Storage vs Session Storage  
+| Criteria | Cookies | Local Storage | Session Storage |
+|----------|---------|---------------|-----------------|
+| Max size | 4 Kb | 5 Mb | 5Mb |
+| Can auto-expire | Yes | No | Yes |
+| Server-side access | Yes | No | No | 
+| Data transferred on each HTTP request (sent with requests) | Yes | No | No | 
+| Lifetime | Specified | Until deleted | Tab closed | 
+| Accessible by | All windows | All windows | Tab only | 
+| Cleared by | PHP, Js, Automatically | Js | Js, Automatically |  
 
+All:
+* User-editable
+* User can block
+* Only supports strings as data types
+* High browser support
+* Can be accessed on the client-side
+* Non-secure data storage
 
 
 ***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***
@@ -1033,16 +1113,22 @@ You must ensure that your crawlers/bots get the closest experience to that of yo
 * [MDN - XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 * [MDN Learn - What is JavaScript?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript)  
 ### HTTP
+* [Auth0 - Auth0](https://auth0.com/intro-to-iam/what-is-oauth-2/)
+* [Auth0 - JSON Web Token](https://auth0.com/docs/secure/tokens/json-web-tokens)
 * [Cloudflare - HTTPS](https://www.cloudflare.com/learning/ssl/what-is-https/)
 * [Cloudflare - HTTP 3.0](https://www.cloudflare.com/learning/performance/what-is-http3/)
 * [IONOS - CORS](https://www.ionos.com/digitalguide/websites/web-development/cross-origin-resource-sharing/)
 * [IONOS - JSONP](https://www.ionos.com/digitalguide/websites/web-development/jsonp/)
 * [IPWithEase - UDP vs TCP](https://ipwithease.com/tcp-vs-udp/)
 * [MDN - An overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+* [Medium - CORS bypass](https://medium.com/the-crazy-coder/a-comprehensive-understanding-of-cors-all-frontend-developers-better-to-have-3ae46d35f19e)
 * [Microsoft Learn - Status codes](https://learn.microsoft.com/en-us/troubleshoot/developer/webapps/iis/www-administration-management/http-status-code#the-http-status-codes)
+* [OneLogin - SSO](https://www.onelogin.com/learn/how-single-sign-on-works)
 * [RestAPITutorial - HTTP](https://www.restapitutorial.com/lessons/httpmethods.html)
 * [SSL - HTTPS](https://www.ssl.com/faqs/what-is-https/)
+* [StackOverflow - Cookies vs Session Storage vs Local Storage](https://stackoverflow.com/questions/19867599/what-is-the-difference-between-localstorage-sessionstorage-session-and-cookies)
 * [TheNewstack - HTTP 3.0](https://thenewstack.io/http-3-is-now-a-standard-why-use-it-and-how-to-get-started/)
 * [Upwork - HTTP 2.0](https://www.upwork.com/resources/what-is-http2)
+* [WallArm](https://www.wallarm.com/what/oauth-vs-jwt-detailed-comparison)
 ### SEO
 * [MDN - SEO](https://developer.mozilla.org/en-US/docs/Glossary/SEO)
