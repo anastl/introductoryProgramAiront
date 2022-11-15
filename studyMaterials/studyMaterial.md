@@ -838,6 +838,85 @@ In `form.onclick handler`, `this (=event.currentTarget)` is the `<form>` element
 ***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***  
 ***[Go back to JavaScript table of content](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#javascript)***
 
+# OOP
+
+<details>
+    <summary>
+    Table of contents
+    </summary>
+
+1. [Concept](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#concept)
+2. [Classes](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#classes)
+3. [Instances](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#instances)
+4. [Prototype](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#prototype)
+5. [Inheritance](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#inheritance)
+6. [Polymorphism](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#polymorphism)
+7. [Encapsulation]](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#encapsulation)
+8. [Prototypes](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#prototypes)
+
+</details>    
+
+## Concept
+Object-oriented programming is about modeling a system as a collection of objects, where each object represents some particular aspect of the system. Objects contain both functions (or methods) and data (or attributes). An object provides a public interface to other code that wants to use it but maintains its own private, internal state.  
+## Classes
+They are abstract definitions representing the types of objects we want to have in our system. In JavaScript, classes are “syntactical sugar”, which means that they don’t exist that way in the actual language itself, but are a simpler and more reliable way to write functions, with a couple of added perks like throwing an error if the keyword new isn’t added to create an instance.
+```
+class Person {
+  constructor ( name, lastName, id, salary ) {
+    this.name = name
+    this.lastName = lastName
+    this.id = id 
+    this.salary = salary
+ }
+    getRaise( raise ) { this.salary += raise }
+}
+```
+The class **Person** has 4 data properties and 1 method.
+## Instances
+On its own, a class doesn't do anything: it's a kind of template for creating concrete objects of that type. Each concrete Person we create is called an instance of the Person class. The process of creating an instance is performed by a special function called a constructor. Programming languages often use the keyword new to signal that a constructor is being called.  
+## Inheritance
+It’s what happens when two classes derive from the same “superclass”, which means that they share some attributes and methods but can’t access each other’s specific attributes nor methods.  
+```
+class Manager extends Person {
+  constructor ( name, lastName, id, salary, employees, authBudget ) {
+    this.name = name
+    this.lastName = lastName
+    this.id = id
+    this.salary = salary
+    this.employees = employees
+    this.authBudget  = authBudget 
+ }
+    hire( newEmployee, employeeId ) { this.employees[employeeId] = newEmployee } }
+    giveRaise( employeeId, raise ) { this.employees[employeeId].salary += raise }
+}
+```
+The classes **Manager** and **Employee** are children of the superclass **Person**, from which they extend the **getRaise** method and 4 data attributes.  
+```
+class Employee extends Person {
+  constructor ( name, lastName, id, salary, bossId, tasks ) {
+      this.name = name
+      this.lastName = lastName
+      this.id = id 
+      this.salary = salary
+      this.bossId = bossId
+      this.tasks = tasks
+ }
+      addWork( newTask ) { this.tasks = [ ...this.tasks, newTask ]
+}
+```
+The class **Employee** and **Manager** have similar attributes and methods but **Employee** can’t access the **hire** or **giveRaise** methods, it can, however, access the **getRaise** and **addWork** methods.  
+## Polymorphism
+When a method has the same name but a different implementation in different classes, is called polymorphism. When a method in a subclass replaces the superclass's implementation, we say that the subclass overrides the version in the superclass.  
+## Encapsulation
+Keeping an object's internal state private, and generally making a clear division between its public interface and its private internal state, is called encapsulation. It enables the programmer to change the internal implementation of an object without having to find and update all the code that uses it.  
+    * The object's internal state is kept private: it can only be accessed by the object's own methods, not from other objects.  
+## Prototypes
+Prototypes are the mechanism by which JavaScript objects inherit features from one another.  
+When you try to access a property of an object: if the property can't be found in the object itself, the prototype is searched for the property. If the property still can't be found, then the prototype's prototype is searched, and so on until either the property is found, or the end of the chain is reached, in which case undefined is returned.  
+
+***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***  
+***[Go back to JavaScript table of content](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#oop)***
+
 # HTTP
 
 <details>
