@@ -9,7 +9,8 @@ Here you'll find information about:
 5. [OOP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#oop)
 6. [HTTP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http)
 7. [SEO](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#seo)
-8. [Agile methodologies and SCRUM](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#agile-methodologies-and-scrum)  
+8. [Security](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#security)
+9. [Agile methodologies and SCRUM](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#agile-methodologies-and-scrum)  
 
 You can also check out the bibliography [here](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#bibliography) if you want to learn more about these topics.  
 Hope you find this useful!
