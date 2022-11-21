@@ -5,9 +5,10 @@
 2. [HTML](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#html)
 3. [CSS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#css)
 4. [JavaScript](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#javascript)
-5. [HTTP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http)
-6. [SEO](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#seo)
-7. [Bibliography](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#bibliography)  
+5. [OOP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#oop)
+6. [HTTP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http)
+7. [SEO](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#seo)
+8. [Bibliography](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#bibliography)  
 
 # GIT  
 
@@ -696,13 +697,15 @@ It is used to construct attractive, consistent, and functional web pages and web
     </summary>
 
 1. [Basic syntax](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#basic-syntax)
-2. [DOM](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#dom)
-3. [Strict](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#strict)
-4. [Scope](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#scope)
-5. [Hoisting](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#hoisting)
-6. [Fetch API](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#fetch-api)
-7. [AJAX (XHR)](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#ajax-xhr)
-8. [Events](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#events)
+2. [Closures](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#closures)
+3. [DOM](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#dom)
+4. [Strict](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#strict)
+5. [Scope](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#scope)
+6. [Hoisting](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#hoisting)
+7. [Fetch API](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#fetch-api)
+8. [AJAX (XHR)](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#ajax-xhr)
+9. [Events](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#events)
+
 </details>
 
 ## Basic syntax
@@ -768,6 +771,17 @@ Both internal and external Javascript can go inside the ``<head>`` or the ``<bod
         * both are `-0`
         * both are `NaN`
         * both are or non-zero, not `NaN`, and have the same value  
+## Closures
+A closure is a function that references variables in the outer scope from its inner scope. It references variables not declared inside itself.
+They can emulate public and private methods or attributes.
+```
+let name = 'Ana';
+
+function greeting() { 
+    let message = 'Hi'
+    console.log(message + '  '+ name)
+}
+```
 ## DOM
 A web page is a document that can be either displayed in the browser window or as the HTML source. In both cases, it is the same document but the Document Object Model (DOM) representation allows it to be manipulated. It represents the document as nodes and objects; that way, programming languages can interact with the page.  
 The DOM represents a document with a logical tree. Each branch of the tree ends in a node, and each node contains objects.  
@@ -845,19 +859,36 @@ In `form.onclick handler`, `this (=event.currentTarget)` is the `<form>` element
     Table of contents
     </summary>
 
-1. [Concept](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#concept)
-2. [Classes](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#classes)
-3. [Instances](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#instances)
-4. [Prototype](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#prototype)
+1. [Concept](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#what-is-oop)
+2. [SOLID](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#solid)
+3. [Classes](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#classes)
+4. [Instances](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#instances)
 5. [Inheritance](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#inheritance)
 6. [Polymorphism](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#polymorphism)
-7. [Encapsulation]](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#encapsulation)
-8. [Prototypes](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#prototypes)
+7. [Encapsulation](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#encapsulation)
+8. [Prototype](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-status-codes)
 
-</details>    
+</details>
 
-## Concept
-Object-oriented programming is about modeling a system as a collection of objects, where each object represents some particular aspect of the system. Objects contain both functions (or methods) and data (or attributes). An object provides a public interface to other code that wants to use it but maintains its own private, internal state.  
+## What is OOP?
+Object-oriented programming is about modeling a system as a collection of objects, where each object represents some particular aspect of the system. Objects contain both functions (or methods) and data (or attributes). An object provides a public interface to other code that wants to use it but maintains its own private, internal state.
+## SOLID
+* ***S***ingle-responsibility Principle
+* ***O***pen-closed Principle
+* ***L***iskov Substitution Principle
+* ***I***nterface Segregation Principle
+* ***D***ependency Inversion Principle  
+### Single-responsibility Principle
+A class should have only one reason to change, meaning that **a class should have only one job**. Only one potential change (database logic, logging logic, and so on.) in the software’s specification should be able to affect the specification of the class. 
+### Open-closed Principle
+Objects or entities should be open for extension but closed for modification. This means that **a class should be extendable without modifying the class itself**. We should be able to add new functionality without touching the existing code for the class. 
+### Liskov Substitution Principle
+Let **q(x)** be a property provable about objects of **x** of type **T**. Then **q(y)** should be provable for objects **y** of type **S** where **S is a subtype of T**. This means that **every subclass or derived class should be substitutable for their base or parent class**. 
+This means that, given that class B is a subclass of class A, we should be able to pass an object of class B to any method that expects an object of class A and the method should not give any weird output in that case. 
+### Interface Segregation Principle
+A client should never be forced to implement an interface that it doesn’t use, or **clients shouldn’t be forced to depend on methods they do not use**. Many client-specific interfaces are better than one general-purpose interface. Clients should not be forced to implement a function they do no need. 
+### Dependency Inversion Principle
+Entities must depend on abstractions, not on concretions. It states that **the high-level module must not depend on the low-level module, but they should depend on abstractions**. We want our classes to be open to extension, so we have reorganized our dependencies to depend on interfaces instead of concrete classes. 
 ## Classes
 They are abstract definitions representing the types of objects we want to have in our system. In JavaScript, classes are “syntactical sugar”, which means that they don’t exist that way in the actual language itself, but are a simpler and more reliable way to write functions, with a couple of added perks like throwing an error if the keyword new isn’t added to create an instance.
 ```
@@ -873,9 +904,9 @@ class Person {
 ```
 The class **Person** has 4 data properties and 1 method.
 ## Instances
-On its own, a class doesn't do anything: it's a kind of template for creating concrete objects of that type. Each concrete Person we create is called an instance of the Person class. The process of creating an instance is performed by a special function called a constructor. Programming languages often use the keyword new to signal that a constructor is being called.  
+On its own, a class doesn't do anything: it's a kind of template for creating concrete objects of that type. Each concrete **Person** we create is called an instance of the **Person** class. The process of creating an instance is performed by a special function called a **constructor**. Programming languages often use the keyword new to signal that a constructor is being called. 
 ## Inheritance
-It’s what happens when two classes derive from the same “superclass”, which means that they share some attributes and methods but can’t access each other’s specific attributes nor methods.  
+It’s what happens when two classes derive from the same “superclass”, which means that they share some attributes and methods but can’t access each other’s specific attributes nor methods.
 ```
 class Manager extends Person {
   constructor ( name, lastName, id, salary, employees, authBudget ) {
@@ -889,8 +920,8 @@ class Manager extends Person {
     hire( newEmployee, employeeId ) { this.employees[employeeId] = newEmployee } }
     giveRaise( employeeId, raise ) { this.employees[employeeId].salary += raise }
 }
-```
-The classes **Manager** and **Employee** are children of the superclass **Person**, from which they extend the **getRaise** method and 4 data attributes.  
+``` 
+The classes **Manager** and **Employee** are children of the superclass **Person**, from which they extend the **getRaise** method and 4 data attributes.
 ```
 class Employee extends Person {
   constructor ( name, lastName, id, salary, bossId, tasks ) {
@@ -904,18 +935,19 @@ class Employee extends Person {
       addWork( newTask ) { this.tasks = [ ...this.tasks, newTask ]
 }
 ```
-The class **Employee** and **Manager** have similar attributes and methods but **Employee** can’t access the **hire** or **giveRaise** methods, it can, however, access the **getRaise** and **addWork** methods.  
+The class **Employee** and **Manager** have similar attributes and methods but **Employee** can’t access the **hire** or **giveRaise** methods, it can, however, access the **getRaise** and **addWork** methods. 
 ## Polymorphism
-When a method has the same name but a different implementation in different classes, is called polymorphism. When a method in a subclass replaces the superclass's implementation, we say that the subclass overrides the version in the superclass.  
+When a **method** has the **same name** but a **different implementation in different classes**, is called polymorphism. When a method in a subclass replaces the superclass's implementation, we say that the subclass overrides the version in the superclass.
 ## Encapsulation
 Keeping an object's internal state private, and generally making a clear division between its public interface and its private internal state, is called encapsulation. It enables the programmer to change the internal implementation of an object without having to find and update all the code that uses it.  
-    * The object's internal state is kept private: it can only be accessed by the object's own methods, not from other objects.  
-## Prototypes
-Prototypes are the mechanism by which JavaScript objects inherit features from one another.  
+* The object's internal state is kept private: it can only be accessed by the object's own methods, not from other objects.
+## Prototype
+Prototypes are the mechanism by which JavaScript objects inherit features from one another. It’s used to provide additional property to all the objects created from a constructor function. 
+### Prototype inheritance
 When you try to access a property of an object: if the property can't be found in the object itself, the prototype is searched for the property. If the property still can't be found, then the prototype's prototype is searched, and so on until either the property is found, or the end of the chain is reached, in which case undefined is returned.  
 
 ***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***  
-***[Go back to JavaScript table of content](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#oop)***
+***[Go back to OOP table of content](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#oop)***
 
 # HTTP
 
@@ -931,15 +963,16 @@ When you try to access a property of an object: if the property can't be found i
 5. [HTTPS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#https)
 6. [Connections and what can be controlled by HTTP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#connections-and-what-can-be-controlled-by-HTTP)
 7. [HTTP methods/ verbs](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-methods-verbs)
-7. [HTTP status codes](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-status-codes)
-8. [Session Management](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#session-management)
-9. [CORS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#cors)
-10. [JSONP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#jsonp)
-11. [JSON Web Token (JWT)](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#json-web-token-jwt)
-12. [Single sign-on (SSO)](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#single-sign-on-sso)
-13. [OAuth 2.0](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#oauth-20)
-14. [JWT vs OAuth](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#jwt-vs-oauth)
-15. [Cookies vs Local Storage vs Session Storage](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#cookies-vs-local-storage-vs-session-storage)
+8. [HTTP status codes](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-status-codes)
+9. [Session Management](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#session-management)
+10. [CORS](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#cors)
+11. [JSONP](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#jsonp)
+12. [JSON Web Token (JWT)](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#json-web-token-jwt)
+13. [Single sign-on (SSO)](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#single-sign-on-sso)
+14. [OAuth 2.0](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#oauth-20)
+15. [JWT vs OAuth](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#jwt-vs-oauth)
+16. [Cookies vs Local Storage vs Session Storage](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#cookies-vs-local-storage-vs-session-storage)
+
 </details>
 
 ## What is HTTP?
@@ -1094,7 +1127,6 @@ Access-Control-Allow-Methods: POST, GET, OPTIONS
 Access-Control-Allow-Headers: X-CUSTOM, Content-Type 
 Access-Control-Max-Age: 86400
 ```  
-
 ## JSONP
 It’s a method that helps structured data be sent between different domains in JSON format. The acronym stands for *JSON* (JavaScript Object Notation) with *Padding*. To bypass the same-origin policy when requesting files from other domains, JSONP does not use the “XMLHttpRequest” object, as the usual JSON code does, but rather the element “script” including a function call. Unlike other files, scripts can also be transferred across domains without the SOP being violated.  
 JSONP solves the same-origin policy problem using `<script>` elements. As many domains as you like can be specified in the `“src”` attribute of this element, and the SOP directive does not apply here. *Therefore, the attribute can also be used to distinguish URLs that belong to a foreign domain and return JSON code and other files*. In such a case, the script itself is exclusively used as a service provider, which sends the JSONP query to the respective web server without having its own effect. Like this:  
@@ -1219,6 +1251,7 @@ You must ensure that your crawlers/bots get the closest experience to that of yo
 ### JavaScript
 * [LoginRadius - AJAX and XHR](https://blog.loginradius.com/engineering/ajax-and-xhr-using-plain-javascript/)
 * [JavaScript Info - Bubbling](https://javascript.info/bubbling-and-capturing)
+* [JavaScript Tutorial - Closures](https://www.javascripttutorial.net/javascript-closure/)
 * [MDN - Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 * [MDN - Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 * [MDN - Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
@@ -1229,6 +1262,11 @@ You must ensure that your crawlers/bots get the closest experience to that of yo
 * [MDN - Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 * [MDN - XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 * [MDN Learn - What is JavaScript?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript)  
+### OOP
+* [Digital Ocean](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design)
+* [Free Code Camp](https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/)
+* [MDN - OOP](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_programming)
+* [MDN - Prototypes](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
 ### HTTP
 * [Auth0 - Auth0](https://auth0.com/intro-to-iam/what-is-oauth-2/)
 * [Auth0 - JSON Web Token](https://auth0.com/docs/secure/tokens/json-web-tokens)
