@@ -1206,7 +1206,7 @@ You must ensure that your crawlers/bots get the closest experience to that of yo
 3. [OWASP and top 10 guidelines](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#owasp-and-top-10-guidelines)
 4. [(DoS) Denial of Service](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#dos-denial-of-service)
 5. [Brute Force Attacks](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#brute-force-attacks)
-6. [(XSS) Cross-Site Scripting Attacks](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#brute-force-attacks)
+6. [(XSS) Cross-Site Scripting Attacks](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#xss-cross-site-scripting-attacks)
 
 </details>
 
