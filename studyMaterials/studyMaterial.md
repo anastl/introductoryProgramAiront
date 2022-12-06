@@ -706,7 +706,7 @@ It is used to construct attractive, consistent, and functional web pages and web
 7. [Fetch API](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#fetch-api)
 8. [AJAX (XHR)](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#ajax-xhr)
 9. [Events](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#events)
-10. [JavaScript](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#javascript)
+10. [Promises](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#promises)
 
 </details>
 
