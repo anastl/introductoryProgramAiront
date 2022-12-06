@@ -706,6 +706,7 @@ It is used to construct attractive, consistent, and functional web pages and web
 7. [Fetch API](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#fetch-api)
 8. [AJAX (XHR)](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#ajax-xhr)
 9. [Events](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#events)
+10. [JavaScript](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#javascript)
 
 </details>
 
@@ -848,6 +849,15 @@ In `form.onclick handler`, `this (=event.currentTarget)` is the `<form>` element
     * abort
     * load
     * loadend
+## Promise
+The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.  
+A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.  
+![promise image](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/promises.png)
+A Promise is in one of these states:  
+* ***pending***: initial state, neither fulfilled nor rejected.
+* ***fulfilled***: meaning that the operation was completed successfully.
+* ***rejected***: meaning that the operation failed.  
+The eventual state of a pending promise can either be fulfilled with a value or rejected with a reason (error). When either of these options occur, the associated handlers queued up by a promise's then method are called. If the promise has already been fulfilled or rejected when a corresponding handler is attached, the handler will be called, so there is no race condition between an asynchronous operation completing and its handlers being attached.  
 
 
 ***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***  
@@ -1212,6 +1222,14 @@ You must ensure that your crawlers/bots get the closest experience to that of yo
 </details>
 
 ## Validation
+Before submitting data to the server, it is important to ensure all required form controls are filled out, in the correct format. This is called client-side form validation, and helps ensure data submitted matches the requirements set forth in the various form controls.  
+Client-side validation is an initial check and an important feature of good user experience; by catching invalid data on the client-side, the user can fix it straight away. If it gets to the server and is then rejected, a noticeable delay is caused by a round trip to the server and then back to the client-side to tell the user to fix their data.  
+This is called form validation. When you enter data, the browser and/or the web server will check to see that the data is in the correct format and within the constraints set by the application. Validation done in the browser is called client-side validation, while validation done on the server is called server-side validation.  
+Never trust data passed to your server from the client. Even if your form is validating correctly and preventing malformed input on the client-side, a malicious user can still alter the network request.  
+There are 3 main reasons to validate data:
+* We want to get the right data, in the right format. Our applications won't work properly if our users' data is stored in the wrong format, is incorrect, or is omitted altogether.
+* We want to protect our users' data. Forcing our users to enter secure passwords makes it easier to protect their account information.
+* We want to protect ourselves. There are many ways that malicious users can misuse unprotected forms to damage the application.  
 ## (MFA) Multi-Factor Authentication
 Multi-factor Authentication (MFA) is an authentication method that requires the user to provide two or more verification factors to gain access to a resource such as an application, online account, or a VPN. MFA is a core component of a strong identity and access management (IAM) policy. Rather than just asking for a username and password, MFA requires one or more additional verification factors, which decreases the likelihood of a successful cyber attack.  
 ### MFA vs Two-Factor Authentication
@@ -1362,6 +1380,7 @@ If you're using JavaScript to construct a URL Query Value, look into using `wind
 * [MDN - Introduction to Events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
 * [MDN - Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 * [MDN - Object.is()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is)  
+* [MDN - Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 * [MDN - Scope](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
 * [MDN - Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 * [MDN - XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
@@ -1393,6 +1412,7 @@ If you're using JavaScript to construct a URL Query Value, look into using `wind
 * [MDN - SEO](https://developer.mozilla.org/en-US/docs/Glossary/SEO)
 ### Security
 * [Kaspersky - Brute Force Attacks](https://www.kaspersky.com/resource-center/definitions/brute-force-attack)
+* [MDN - Validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
 * [OneLogin - MFA](https://www.onelogin.com/learn/what-is-mfa)
 * [OWASP - Top 10 Security Guidelines](https://owasp.org/www-project-top-ten/)
 * [OWASP - XSS](https://owasp.org/www-community/attacks/xss/)
