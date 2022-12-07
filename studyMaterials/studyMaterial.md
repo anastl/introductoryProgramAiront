@@ -707,6 +707,7 @@ It is used to construct attractive, consistent, and functional web pages and web
 8. [AJAX (XHR)](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#ajax-xhr)
 9. [Events](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#events)
 10. [Promises](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#promises)
+11. [Async / Await](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#async-await)
 
 </details>
 
@@ -857,7 +858,20 @@ A Promise is in one of these states:
 * ***pending***: initial state, neither fulfilled nor rejected.
 * ***fulfilled***: meaning that the operation was completed successfully.
 * ***rejected***: meaning that the operation failed.  
+
 The eventual state of a pending promise can either be fulfilled with a value or rejected with a reason (error). When either of these options occur, the associated handlers queued up by a promise's then method are called. If the promise has already been fulfilled or rejected when a corresponding handler is attached, the handler will be called, so there is no race condition between an asynchronous operation completing and its handlers being attached.  
+## Async / Await
+The async function declaration declares an async function where the await keyword is permitted within the function body. The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.  
+### Async 
+The word `“async”` before a function means that a function always returns a promise. `Async` functions can contain zero or more `await` expressions. `Await` expressions make promise-returning functions behave as though they're synchronous by suspending execution until the returned promise is fulfilled or rejected. The resolved value of the promise is treated as the return value of the `await` expression. Use of `async` and `await` enables the use of ordinary `try / catch` blocks around asynchronous code.  
+Even though the return value of an `async` function behaves as if it's wrapped in a `Promise.resolve`, they are not equivalent. An `async` function will return a different reference, whereas `Promise.resolve` returns the same reference if the given value is a promise.  
+The body of an `async` function can be thought of as being split by zero or more `await` expressions. Top-level code, up to and including the first `await` expression (if there is one), is run synchronously. In this way, an `async` function without an `await` expression will run synchronously. If there is an `await` expression inside the function body, however, the `async` function will always complete asynchronously.  
+Code after each `await` expression can be thought of as existing in a `.then` `callback`. In this way a promise chain is progressively constructed with each reentrant step through the function. The return value forms the final link in the chain.  
+### Await 
+The `await` operator is used to wait for a Promise and get its fulfillment value. It can only be used inside an `async` function or at the top level of a module. 
+The return value is the fulfillment value of the promise or thenable object, or, if the expression is not thenable, the expression's own value.  
+`await` is usually used to unwrap promises by passing a `Promise` as the expression. Using `await` pauses the execution of its surrounding `async` function until the promise is settled (that is, fulfilled or rejected). When execution resumes, the value of the `await` expression becomes that of the fulfilled promise. If the promise is rejected, the `await` expression throws the rejected value.
+Because `await` is only valid inside `async` functions and modules, which themselves are asynchronous and return promises, the `await` expression never blocks the main thread and only defers execution of code that actually depends on the result, i.e. anything after the `await` expression.  
 
 
 ***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***  
@@ -1374,6 +1388,8 @@ If you're using JavaScript to construct a URL Query Value, look into using `wind
 * [LoginRadius - AJAX and XHR](https://blog.loginradius.com/engineering/ajax-and-xhr-using-plain-javascript/)
 * [JavaScript Info - Bubbling](https://javascript.info/bubbling-and-capturing)
 * [JavaScript Tutorial - Closures](https://www.javascripttutorial.net/javascript-closure/)
+* [MDN - Async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+* [MDN - Await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 * [MDN - Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 * [MDN - Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 * [MDN - Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
