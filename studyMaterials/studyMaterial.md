@@ -879,7 +879,101 @@ A callback function is a function passed into another function as an argument, w
 const callbackFun = ( name ) => `${name}@company.com`
 const arrayOfUserEmails = usersData.map( callbackFun( userName ) )
 ```
-The above example is a synchronous callback, as it is executed immediately. However, callbacks are often used to continue code execution after an asynchronous operation has completed — these are called asynchronous callbacks. A good example is the callback functions executed inside a `.then()` block chained onto the end of a promise after that promise fulfills or rejects. This structure is used in many modern web APIs, such as `fetch()`.
+The above example is a synchronous callback, as it is executed immediately. However, callbacks are often used to continue code execution after an asynchronous operation has completed — these are called asynchronous callbacks. A good example is the callback functions executed inside a `.then()` block chained onto the end of a promise after that promise fulfills or rejects. This structure is used in many modern web APIs, such as `fetch()`.  
+## ES6+
+ES6 is short for ECMAScript 6, and the plus sign (+) signals that we're also including features from even newer versions of ECMAScript. ECMAScript 6 (ES6 for short) is the sixth edition of the ECMA-262 standard and features major changes and improvements to the ECMAScript specification.  
+ECMA means European Computer Manufacturer's Association. ECMAScript is a programming language standard and JavaScript is its implementation. ECMAScript specifies the core features that a language should provide and how those features should be implemented.
+### Top Features Introduced since ES6 or ECMAScript 2015
+1. `let` and `const` Keywords  
+The keyword "let" enables the users to define variables and on the other hand, "const" enables the users to define constants. Variables were previously declared using "var" which had function scope and were hoisted to the top. It means that a variable can be used before declaration. But, the "let" variables and constants have block scope which is surrounded by curly-braces "{}" and cannot be used before declaration.   
+2. Arrow Functions  
+Arrow functions are defined using the fat arrow (=>) notation.   
+It is evident that there is no "return" or "function" keyword in the arrow function declaration. We can also skip the parenthesis in the case when there is exactly one parameter, but will always need to use it when you have zero or more than one parameter.  
+But, if there are multiple expressions in the function body, then we need to wrap it with curly braces ("{}"). We also need to use the "return" statement to return the required value.  
+The behavior of `this` inside of an arrow function differs considerably from the regular function's `this` behavior. The arrow function doesn't define its own execution context. No matter how or where being executed, `this` value inside of an arrow function always equals this value from the outer function.  
+```
+const callbackFun = name => `${name}@company.com`
+``` 
+3. Multi-line Strings  
+Users can create multi-line strings by using `` ` `` back-ticks.
+```
+const greeting = `This
+                  is
+                  a
+                  multi-line
+                  string
+                  !`
+```                  
+4. Default Parameters  
+```
+const divide = ( a, b = 1 ) => ( b !== 0 ? a/b : 0 )
+```  
+5. Template Literals
+The syntax for using the string template is `${PARAMETER}` and is used inside of the back-ticked string.
+```
+const greeting = userName => `Welcome back, ${userName}`
+```  
+6. `Spread` Operator  
+The `spread (...)` syntax allows an iterable, such as an array or string, to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected. In an object literal, the spread syntax enumerates the properties of an object and adds the key-value pairs to the object being created.
+```
+const dob = {
+    year,
+    month,
+    day
+}
+const personObj = {
+    name, 
+    lastName,
+    height,
+    weight,
+    sex
+}
+const addAge = (personObject, dob, currYear) => ( { ...personObject, age: currYear - dob.year  } )
+
+// expected return value: an object with name, lastName, height, weight, sex and age properties.
+
+const arrayOfAnimals = ['Monkey', 'Elephant', 'Giraffe', 'Lion']
+const addAnimal = ( animalsArr, newAnimal ) => ( [ ... animalsArr, newAnimal ] )
+
+// expected return value with 'Zebra' as the 'newAnimal' argument: ['Monkey', 'Elephant', 'Giraffe', 'Lion', 'Zebra']
+```  
+7. `Rest` Parameters  
+The rest parameter syntax allows a function to accept an indefinite number of arguments as an array. A function definition's last (or only) parameter can be prefixed with `...`, which will cause all remaining (user supplied) parameters to be placed within an Array object. A function definition can only have one rest parameter, and the rest parameter must be the last parameter in the function definition. 
+```
+function getMoviesToWatch ( ...movies ) {
+    movies.forEach( movie => searchInDatabase( movie ) )
+}
+function borrowBooks( username, ...books ) {
+    books.forEach( book => addToBooksBorrowed( username, book.id ) )
+}
+```  
+8. Destructuring Objects 
+Object destructuring picks out values from objects and assigns it to variables. It is a more convenient method of accessing an object’s internal properties.
+```
+const dobObj = {
+    day, 
+    month,
+    year
+}
+const bookObj = {
+    title, 
+    author, 
+    summary, 
+    edition,
+    editorialHouse, 
+    hasAudioVersion, 
+    id
+}
+const {day, month, year} = dobObj
+const {title, author, summary, edition} = bookObj
+```
+9. `Promises`
+10. `Classes`
+11. Modules
+12. `For ... of` Loop
+13. `Sets` 
+Set class works in Javascript the way mathematical set notation works. There are no repeated elements. Only unique elements are preserved. A host functions are provided on this class like add , has , clear etc.
+
 
 ***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***  
 ***[Go back to JavaScript table of content](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#javascript)***
@@ -1405,7 +1499,9 @@ If you're using JavaScript to construct a URL Query Value, look into using `wind
 * [MDN - Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 * [MDN - Object.is()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is)  
 * [MDN - Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+* [MDN - Rest parameter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters#the_difference_between_rest_parameters_and_the_arguments_object)
 * [MDN - Scope](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
+* [MDN - Spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 * [MDN - Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 * [MDN - XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 * [MDN Learn - What is JavaScript?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript)  
