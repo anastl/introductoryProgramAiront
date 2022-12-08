@@ -709,7 +709,7 @@ It is used to construct attractive, consistent, and functional web pages and web
 10. [Promises](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#promises)
 11. [Async / Await](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#async--await)
 12. [Callbacks](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#callbacks)
-
+13. [ES6+](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#es6)
 </details>
 
 ## Basic syntax
@@ -884,9 +884,9 @@ The above example is a synchronous callback, as it is executed immediately. Howe
 ES6 is short for ECMAScript 6, and the plus sign (+) signals that we're also including features from even newer versions of ECMAScript. ECMAScript 6 (ES6 for short) is the sixth edition of the ECMA-262 standard and features major changes and improvements to the ECMAScript specification.  
 ECMA means European Computer Manufacturer's Association. ECMAScript is a programming language standard and JavaScript is its implementation. ECMAScript specifies the core features that a language should provide and how those features should be implemented.
 ### Top Features Introduced since ES6 or ECMAScript 2015
-1. `let` and `const` Keywords  
+1. `let` and `const` Keywords    
 The keyword "let" enables the users to define variables and on the other hand, "const" enables the users to define constants. Variables were previously declared using "var" which had function scope and were hoisted to the top. It means that a variable can be used before declaration. But, the "let" variables and constants have block scope which is surrounded by curly-braces "{}" and cannot be used before declaration.   
-2. Arrow Functions  
+2. Arrow Functions    
 Arrow functions are defined using the fat arrow (=>) notation.   
 It is evident that there is no "return" or "function" keyword in the arrow function declaration. We can also skip the parenthesis in the case when there is exactly one parameter, but will always need to use it when you have zero or more than one parameter.  
 But, if there are multiple expressions in the function body, then we need to wrap it with curly braces ("{}"). We also need to use the "return" statement to return the required value.  
@@ -894,7 +894,7 @@ The behavior of `this` inside of an arrow function differs considerably from the
 ```
 const callbackFun = name => `${name}@company.com`
 ``` 
-3. Multi-line Strings  
+3. Multi-line Strings    
 Users can create multi-line strings by using `` ` `` back-ticks.
 ```
 const greeting = `This
@@ -904,11 +904,11 @@ const greeting = `This
                   string
                   !`
 ```                  
-4. Default Parameters  
+4. Default Parameters   
 ```
 const divide = ( a, b = 1 ) => ( b !== 0 ? a/b : 0 )
 ```  
-5. Template Literals
+5. Template Literals  
 The syntax for using the string template is `${PARAMETER}` and is used inside of the back-ticked string.
 ```
 const greeting = userName => `Welcome back, ${userName}`
@@ -937,7 +937,7 @@ const addAnimal = ( animalsArr, newAnimal ) => ( [ ... animalsArr, newAnimal ] )
 
 // expected return value with 'Zebra' as the 'newAnimal' argument: ['Monkey', 'Elephant', 'Giraffe', 'Lion', 'Zebra']
 ```  
-7. `Rest` Parameters  
+7. `Rest` Parameters    
 The rest parameter syntax allows a function to accept an indefinite number of arguments as an array. A function definition's last (or only) parameter can be prefixed with `...`, which will cause all remaining (user supplied) parameters to be placed within an Array object. A function definition can only have one rest parameter, and the rest parameter must be the last parameter in the function definition. 
 ```
 function getMoviesToWatch ( ...movies ) {
@@ -947,7 +947,7 @@ function borrowBooks( username, ...books ) {
     books.forEach( book => addToBooksBorrowed( username, book.id ) )
 }
 ```  
-8. Destructuring Objects 
+8. Destructuring Objects   
 Object destructuring picks out values from objects and assigns it to variables. It is a more convenient method of accessing an object’s internal properties.
 ```
 const dobObj = {
@@ -967,12 +967,55 @@ const bookObj = {
 const {day, month, year} = dobObj
 const {title, author, summary, edition} = bookObj
 ```
-9. `Promises`
-10. `Classes`
-11. Modules
-12. `For ... of` Loop
-13. `Sets` 
-Set class works in Javascript the way mathematical set notation works. There are no repeated elements. Only unique elements are preserved. A host functions are provided on this class like add , has , clear etc.
+9. `Promises`  
+10. `Classes`  
+11. Modules  
+JavaScript modules provide mechanisms for splitting JavaScript programs up into separate files, and `import` what's needed from each of them when needed. Use of native JavaScript modules is dependent on the `import` and `export` statements, which go at the top level of a module (not inside functions, blocks, etc). Modules are automatically interpreted in strict mode.  
+
+***Export***  
+There are two ways to `export` a `class`, `function`, or variable:
+* Named export, of which there can be many in the same file
+* Default export, that is only allowed once per module  
+When exporting, the names can be redefined with the keyword `as`.
+```
+const greeting = name => <span>`Welcome back, ${name}`</span>
+export greeting as getGreetingSpan
+```  
+A module can also "relay" values exported from other modules without the hassle of writing two separate import/export statements. This is often useful when creating a single module concentrating various exports from various modules. 
+```
+export { x } from "mod";
+export { x as v } from "mod";
+export * as ns from "mod";
+```  
+
+***Import***  
+In order to use the import declaration in a source file, the file must be interpreted by the runtime as a module. In HTML, this is done by adding `type="module"` to the `<script>` tag.  
+There are four forms of `import` declarations:  
+* Named import: `import { export1, export2 as e2 } from "module-name"`
+* Default import: `import defaultExport from "module-name"`
+* Namespace import: `import * as namespaceImport from "module-name"`
+* Side effect import: `import "module-name"`  
+
+The `namespace` import inserts `namespaceImport` into the current scope, containing all the exports from the module located at `/modules/module-name.js`.
+```
+import * as myModule from "/modules/my-module.js";
+```
+Above, `myModule` represents a namespace object which contains all exports as properties. For example, if the module imported above includes an export `fun1()`, it would be called like `myModule.fun1()`.
+
+The `side effects` import, runs the module's global code, but doesn't actually import any values.
+
+12. `For ... of` Loop  
+The for...of statement executes a loop that operates on a sequence of values sourced from an iterable object. Iterable objects include instances of built-ins such as `Array`, `String`, `TypedArray`, `Map`, `Set`, `NodeList` (and other DOM collections), as well as the `arguments` object (created by the rest parameter).  
+```
+const countriesArray = [`Canada`, `USA`, `Scotland`, `Spain`, `Ireland`, `Australia`]
+for (const country of countriesArray) {
+    // ...
+}
+```  
+13. `Sets`  
+`Set` objects are collections of values. A value in the `Set` may only occur once; it is unique in the `Set`'s collection. You can iterate through the elements of a `set` in insertion order. The insertion order corresponds to the order in which each element was inserted into the set by the `add()` method.  
+`Set` class works in Javascript the way mathematical set notation works. There are no repeated elements. Only unique elements are preserved. A host functions are provided on this class like `add`, `has`, `clear`, etc. 
+
 
 
 ***[Go back to the main table of contents](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#table-of-contents)***  
@@ -1486,6 +1529,7 @@ If you're using JavaScript to construct a URL Query Value, look into using `wind
 * [Swaps - SMACSS](https://swapps.com/blog/what-is-smacss-and-how-to-use-it/)
 * [Wikipedia - Bootstrap](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
 ### JavaScript
+* [Board - Top 10 Features of ES6](https://www.boardinfinity.com/blog/top-10-features-of-es6)
 * [LoginRadius - AJAX and XHR](https://blog.loginradius.com/engineering/ajax-and-xhr-using-plain-javascript/)
 * [JavaScript Info - Bubbling](https://javascript.info/bubbling-and-capturing)
 * [JavaScript Tutorial - Closures](https://www.javascripttutorial.net/javascript-closure/)
@@ -1493,18 +1537,24 @@ If you're using JavaScript to construct a URL Query Value, look into using `wind
 * [MDN - Await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 * [MDN - Callbacks](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
 * [MDN - Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+* [MDN - Export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
 * [MDN - Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+* [MDN - for ... of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
 * [MDN - Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
+* [MDN - Import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 * [MDN - Introduction to Events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
 * [MDN - Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+* [MDN - Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#a_background_on_modules)
 * [MDN - Object.is()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is)  
 * [MDN - Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 * [MDN - Rest parameter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters#the_difference_between_rest_parameters_and_the_arguments_object)
+* [MDN - Sets](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
 * [MDN - Scope](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
 * [MDN - Spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 * [MDN - Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 * [MDN - XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 * [MDN Learn - What is JavaScript?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript)  
+* [Medium - 7 Javascript ES6+ Features You Must Know in 2020](https://medium.com/the-codehub/7-javascript-es6-features-you-must-know-in-2020-fe126cd65f7b)
 ### OOP
 * [Digital Ocean](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design)
 * [Free Code Camp](https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/)
