@@ -1035,7 +1035,7 @@ for (const country of countriesArray) {
 5. [Inheritance](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#inheritance)
 6. [Polymorphism](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#polymorphism)
 7. [Encapsulation](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#encapsulation)
-8. [Prototype](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#http-status-codes)
+8. [Prototype](https://github.com/anastl/introductoryProgramAiront/blob/master/studyMaterials/studyMaterial.md#prototype)
 
 </details>
 
