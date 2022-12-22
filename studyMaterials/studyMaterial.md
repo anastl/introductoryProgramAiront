@@ -888,7 +888,7 @@ ECMA means European Computer Manufacturer's Association. ECMAScript is a program
 The keyword "let" enables the users to define variables and on the other hand, "const" enables the users to define constants. Variables were previously declared using "var" which had function scope and were hoisted to the top. It means that a variable can be used before declaration. But, the "let" variables and constants have block scope which is surrounded by curly-braces "{}" and cannot be used before declaration.   
 2. Arrow Functions    
 Arrow functions are defined using the fat arrow (=>) notation.   
-It is evident that there is no "return" or "function" keyword in the arrow function declaration. We can also skip the parenthesis in the case when there is exactly one parameter, but will always need to use it when you have zero or more than one parameter.  
+It is evident that there is no "function" keyword in the arrow function declaration. We can also skip the parenthesis if there is exactly one parameter, but will always need to use it when you have zero or more than one parameter.  
 But, if there are multiple expressions in the function body, then we need to wrap it with curly braces ("{}"). We also need to use the "return" statement to return the required value.  
 The behavior of `this` inside of an arrow function differs considerably from the regular function's `this` behavior. The arrow function doesn't define its own execution context. No matter how or where being executed, `this` value inside of an arrow function always equals this value from the outer function.  
 ```
